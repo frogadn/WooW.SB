@@ -1,0 +1,373 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutPartialBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using <#=Project#>.Auth;
+using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
+using ServiceStack;
+using WooW.Model;
+using WooW.Core;
+using DevExpress.CodeParser;
+using System.Globalization;
+using <#=Project#>.Localizer;
+using System.Net.Http.Json;
+using WooW.Blazor;
+using WooW.Blazor.Services;
+
+namespace <#=Project#>.Shared
+{
+    public partial class WoHeaderLayout : AWoComponentBase
+    {
+        #region Cliente
+
+        /// <summary>
+        /// Inicializa el cliente.
+        /// </summary>
+        /// <returns></returns>
+        private async Task LoadClient()
+        {
+            try
+            {
+                Client = await GetClientAsync();
+
+                if (Client != null)
+                {
+                    _reqRol = new WoRequestService<WoRolePermissionReq, WoRolePermissionRes>(Client);
+                    _reqMenu = new WoRequestService<WoMenusReq, WoMenusRes>(Client);
+                }
+            }
+            catch (Exception ex)
+            {
+                /// error al cargar el cliente
+            }
+        }
+
+        #endregion Cliente
+
+        #region Ciclo de vida
+
+        /// <summary>
+        /// Método que se ejecuta al inicializar el componente.
+        /// </summary>
+        /// <param name="firstRender"></param>
+        /// <returns></returns>
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            await base.OnAfterRenderAsync(firstRender);
+
+            await LoadClient();
+
+            try
+            {
+                await LoadCultures();
+            }
+            catch (Exception ex)
+            {
+                /// error al cargar las culturas
+            }
+
+            try
+            {
+                if (AuthStateProvider != null)
+                {
+                    AuthResult = await AuthStateProvider.LocalStorage.GetItemAsync<AuthenticateResponse>("A");
+                    UdnResult = await AuthStateProvider.LocalStorage.GetItemAsync<WoInstanciaUdnResponse>("U");
+                    SessionData = await AuthStateProvider.LocalStorage.GetItemAsync<SessionData>("S");
+                }
+            }
+            catch (Exception ex)
+            {
+                /// error al recuperar la data de la autenticación
+            }
+
+            if (firstRender)
+            {
+                try
+                {
+                    _selectedRol = await LocalStorage.GetItemAsync<string>("Rol");
+                    _roles = await LocalStorage.GetItemAsync<List<string>>("Roles") ?? new List<string>();
+
+                    if (_selectedRol != null)
+                    {
+                        await SelectRol(_selectedRol);
+
+                        _selectedMenu = await LocalStorage.GetItemAsync<string>("Menu");
+
+                        if (!_selectedMenu.IsNullOrEmpty())
+                        {
+                            await SelectMenu(_selectedMenu);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    /// error al recuperar el rol del local storage
+                }
+            }
+        }
+
+        #endregion Ciclo de vida
+
+        #region Roles
+
+        /// <summary>
+        /// Lista de los roles del usuario.
+        /// </summary>
+        private List<string> _roles = new List<string>();
+
+        /// <summary>
+        /// Rol seleccionado del cual se recuperaran los menus.
+        /// </summary>
+        private string? _selectedRol;
+
+        /// <summary>
+        /// Servicio que permite realizar peticiones de los roles.
+        /// </summary>
+        private WoRequestService<WoRolePermissionReq, WoRolePermissionRes>? _reqRol;
+
+        /// <summary>
+        /// Evento que se detona al dar click en el dropdown de roles.
+        /// </summary>
+        /// <returns></returns>
+        private async Task RoleDropDownClick()
+        {
+            await LoadRoles();
+        }
+
+        /// <summary>
+        /// Carga el cliente y la lista de roles.
+        /// </summary>
+        /// <returns></returns>
+        private async Task LoadRoles()
+        {
+            try
+            {
+                if (_reqRol != null)
+                {
+                    IList<WoRolePermissionRes> result = await _reqRol.GetListResponse();
+                    if (result != null)
+                    {
+                        _roles.Clear();
+
+                        foreach (WoRolePermissionRes role in result)
+                        {
+                            _roles.AddRange(role.RoleCol);
+                        }
+
+                        await LocalStorage.SetItemAsync("Roles", _roles);
+                    }
+
+                    StateHasChanged();
+                }
+            }
+            catch (Exception ex)
+            {
+                /// Fallo la recuperacion de los roles
+            }
+        }
+
+        #region Seleccion de rol
+
+        /// <summary>
+        /// Selecciona el rol y carga los menus.
+        /// </summary>
+        /// <param name="newRol"></param>
+        /// <returns></returns>
+        private async Task SelectRol(string newRol)
+        {
+            _menusCol.Clear();
+            _menus.Clear();
+            _rawMenusCol.Clear();
+            _selectedRol = newRol;
+
+            await LoadMenus();
+
+            await LocalStorage.SetItemAsync("Rol", newRol);
+        }
+
+        #endregion Seleccion de rol
+
+        #endregion Roles
+
+        #region Menus
+
+        /// <summary>
+        /// Nombre del menu seleccionado.
+        /// </summary>
+        private string? _selectedMenu;
+
+        /// <summary>
+        /// Lista de los nombres de los menus que se muestran en el select.
+        /// </summary>
+        private List<string> _menus = new List<string>();
+
+        /// <summary>
+        /// Lista de los menus, son los json completos del menu.
+        /// </summary>
+        private List<string> _rawMenusCol = new List<string>();
+
+        /// <summary>
+        /// Lista de los menus deserializados a WoMenuProperties.
+        /// </summary>
+        private List<WoMenuProperties> _menusCol = new List<WoMenuProperties>();
+
+        /// <summary>
+        /// Servicio que permite la petición de los menus.
+        /// </summary>
+        private WoRequestService<WoMenusReq, WoMenusRes>? _reqMenu;
+
+        /// <summary>
+        /// Carga los menus.
+        /// </summary>
+        /// <returns></returns>
+        private async Task LoadMenus()
+        {
+            try
+            {
+                if (_reqMenu != null)
+                {
+                    IList<WoMenusRes> resultMenusCol = await _reqMenu.GetListResponse();
+
+                    _menusCol.Clear();
+                    _menus.Clear();
+
+                    foreach (var item in resultMenusCol)
+                    {
+                        if (item.Rol == _selectedRol)
+                        {
+                            string menu = item.Menu ?? string.Empty;
+                            if (menu != string.Empty)
+                            {
+                                WoMenuProperties? woContainer = JsonConvert.DeserializeObject<WoMenuProperties>(menu);
+                                if (woContainer != null)
+                                {
+                                    _menusCol.Add(woContainer);
+                                    _menus.Add(woContainer.Id);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                /// error al consultar los menus
+            }
+        }
+
+        #region Seleccion del menu
+
+        /// <summary>
+        /// Evento que se detona al seleccionar un menu
+        /// </summary>
+        /// <param name="newMenu"></param>
+        /// <returns></returns>
+        private async Task SelectMenu(string newMenu)
+        {
+            _selectedMenu = newMenu;
+            WoMenuProperties? woContainer = _menusCol.Where(x => x.Id == newMenu).FirstOrDefault();
+
+            if (woContainer != null)
+            {
+                _rawMenusCol.Clear();
+                _rawMenusCol.Add(JsonConvert.SerializeObject(woContainer));
+            }
+            else
+            {
+                _rawMenusCol.Clear();
+                _rawMenusCol.Add(JsonConvert.SerializeObject(new WoMenuProperties()));
+            }
+
+            await LocalStorage.SetItemAsync("Menu", newMenu);
+
+            StateHasChanged();
+        }
+
+        #endregion Seleccion del menu
+
+        #endregion Menus
+
+        #region Selector de culturas
+
+        /// <summary>
+        /// Indica el nombre de la region seleccionada.
+        /// </summary>
+        private string _selectedCulture = CultureInfo.CurrentCulture.Name;
+
+        /// <summary>
+        /// lista de las posibles culturas
+        /// </summary>
+        private List<string> _cultures = new List<string>();
+
+        /// <summary>
+        /// Carga la cultura la iniciar desde el local storage
+        /// </summary>
+        /// <returns></returns>
+        private async Task LoadCultures()
+        {
+            string cultureStorage = await LocalStorage.GetItemAsync<string>("culture") ?? LocalizerSettings.NeutralCulture.Culture;
+            _cultures.Clear();
+            foreach (var culture in LocalizerSettings.SupportedCulturesWithName)
+            {
+                _cultures.Add(culture.Culture);
+            }
+            _selectedCulture = cultureStorage;
+        }
+
+        /// <summary>
+        /// Cambia la cultura seleccionada
+        /// </summary>
+        /// <param name="newCulture"></param>
+        private async void ChangeCulture(string newCulture)
+        {
+            var uri = new Uri(Navigation.Uri)
+                        .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+            var cultureEscaped = Uri.EscapeDataString(newCulture);
+            var uriEscaped = Uri.EscapeDataString(uri);
+
+            await LocalStorage.SetItemAsStringAsync("culture", newCulture);
+
+            Navigation.NavigateTo(
+                $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
+                forceLoad: true);
+        }
+
+        #endregion Selector de culturas
+
+        #region LogOut
+
+        /// <summary>
+        /// Evento que se detona al dar click en el boton de logout.
+        /// </summary>
+        private async Task LogOut_Click()
+        {
+
+            await LocalStorage.RemoveItemAsync("Rol");
+            await LocalStorage.RemoveItemAsync("Roles");
+
+            _menus.Clear();
+            _menusCol.Clear();
+            _rawMenusCol.Clear();
+
+            _roles.Clear();
+
+            AuthStateProvider?.Logout();
+
+            StateHasChanged();
+        }
+
+        #endregion LogOut
+        
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+#>

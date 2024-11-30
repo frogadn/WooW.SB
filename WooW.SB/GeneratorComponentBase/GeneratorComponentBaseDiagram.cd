@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.WoItem">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEEAAAAAAAAAAASAQQAAAAAAQAgQIACAAQACA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.WoDesignerProperties">
+    <Position X="13.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAACAAAAAIAAEAACAACAAAAAAgEAAAAAAFAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.WoDesignerCommons">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.WoContainer">
+    <Position X="2.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIEAAEAAAAAAAIAAASAQQAAEAAgAAkAAACAAQEAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoContainer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WooW.SB.GeneratorComponentBase.GeneratorInterfaces.IWoMenuItem">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQACA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorInterfaces\IWoMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WooW.SB.GeneratorComponentBase.GeneratorInterfaces.IWoMenu">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAQAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorInterfaces\IWoMenu.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WooW.SB.GeneratorComponentBase.GeneratorInterfaces.IWoFormItem">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEEAAAAAAAAAAAAAAQAAAAAAAAgQAAAAAAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorInterfaces\IWoFormItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WooW.SB.GeneratorComponentBase.GeneratorInterfaces.IWoFormGroup">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEAAAAAAAAAAAAAAQAAEAAgAAgAAAAAAAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorInterfaces\IWoFormGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.eTypeContainer" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAAAAAIAAIAAAAAEAAAAgAAAAAEAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.eTypeItem" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAACAAEAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.eColor" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAEAAQQAAAAAAAAAAAAQAAAAACAAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.eFontType" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAABAAAAAAAAAAAAAAEAAAAAAAAAE=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.eOrientacion" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WooW.SB.GeneratorComponentBase.GeneratorComponent.eAlignItem" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAIAAA=</HashCode>
+      <FileName>GeneratorComponentBase\GeneratorComponent\WoDesignerCommons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

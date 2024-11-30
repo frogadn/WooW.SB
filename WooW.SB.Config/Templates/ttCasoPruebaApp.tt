@@ -1,0 +1,54 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using System.Threading;
+using ServiceStack;
+using ServiceStack.Text;
+//using ServiceStack.Auth;
+using WooW.DTO;
+using WooW.Model;
+using WooW.Core;
+using WooW.Core.Server;
+using Newtonsoft.Json;
+
+
+namespace WooW
+{
+	[Serializable]
+    public class <#=NombreCasoPrueba#>UnitTest : IWoUnitHybridTest
+    {
+		#region Parametros
+
+        public string User { get; set; }
+		public string DataBase { get; set; }
+		public tWoIntanciaType InstanceType { get; set; }
+		public string Instance { get; set; }
+        public string Udn { get; set; }
+		public int Year { get; set; }
+        public decimal[] ParamsDecimal { get; set; }
+		public string[] ParamsString { get; set; }
+		public int ExecuteNumber { get; set; }
+		public IWoUnitTestHelper Uth { get; set; }
+		public string LocalDB { get; set; }
+
+		#endregion Propiedades
+
+		public bool Run(WoTargetConnection woTarget)
+		{
+
+			// Ponga aquí su codigo
+			
+			
+			return true;
+		}
+	}
+}
+<#+
+public string NombreCasoPrueba { get; set; }  
+#>

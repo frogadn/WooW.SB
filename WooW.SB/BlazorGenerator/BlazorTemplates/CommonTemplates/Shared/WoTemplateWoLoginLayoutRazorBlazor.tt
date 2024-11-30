@@ -1,0 +1,192 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name = "System.Xml.dll" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".razor" #>
+@*///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoLoginLayoutRazorBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------*@
+
+@*Injeccion de la dependencia del localizer (recuperacion de etiquetas y formatos en funcion de la cultura)*@
+@inject IStringLocalizer<App> Localizer
+
+@*Injeccion de la dependencia del proveedor de estado de autenticacion*@
+@inject WoAuthenticationStateProvider Provider
+
+@*Formulario*@
+<WoForm SetStatus="@SetStatusWfRoot" @ref="@_wfRoot">
+
+    @*Alertas*@
+    <WoFormItem ColSpan="12"
+                BeginRow="true">
+
+        <TemplateFragment>
+            <WoFormAlert SetStatus="@SetStatusAlerts" @ref="@_alerts" />
+        </TemplateFragment>
+
+    </WoFormItem>
+
+    <WoFormGroup Caption="@Localizer["Login"]"
+                 ColSpan=12
+                 BeginRow="true"
+                 SetStatus="@SetStatusWfgformModelForm"
+    @ref="@_wfgformModelForm">
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["Usuario"]"
+                    SetStatus="@SetStatusFliUser"
+        @ref="@_fliUser">
+
+            <TemplateFragment>
+                <WoTextEdit Id="txtUser"
+                            TApp="App"
+                            Value="@_scriptsUser.Authenticate.UserName"
+                            IsRequired="@true"
+                            SetStatus="@SetStatusTxtUser"
+                            ValueChangedEvc="@User_OnChange"
+                            OnFocusEvc="@_scriptsUser.User_OnFocus"
+                            OnBlurEvc="@_scriptsUser.User_OnBlur"
+                @ref="@_txtUser" />
+
+                <WoInputAlert SetStatus="@SetStatusWiaUser" @ref="@_wiaUser" />
+            </TemplateFragment>
+
+        </WoFormItem>
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["Password"]"
+                    SetStatus="@SetStatusFliPassword"
+        @ref="@_fliPassword">
+
+            <TemplateFragment>
+                <WoTextEdit Id="txtPassword"
+                            TApp="App"
+                            Value="@_scriptsUser.Authenticate.Password"
+                            IsRequired="@true"
+                            SetStatus="@SetStatusTxtPassword"
+                            ValueChangedEvc="@Password_OnChange"
+                            OnFocusEvc="@_scriptsUser.Password_OnFocus"
+                            OnBlurEvc="@_scriptsUser.Password_OnBlur"
+                @ref="@_txtPassword" />
+
+                <WoInputAlert SetStatus="@SetStatusWiaPassword" @ref="@_wiaPassword" />
+            </TemplateFragment>
+
+        </WoFormItem>
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["Instancia"]"
+                    SetStatus="@SetStatusFliInstance"
+        @ref="@_fliInstance">
+
+            <TemplateFragment>
+                <WoTextEdit Id="txtInstance"
+                            TApp="App"
+                            Value="@_scriptsUser.InstanciaUdnAsignar.Instance"
+                            IsRequired="@true"
+                            SetStatus="@SetStatusTxtInstance"
+                            ValueChangedEvc="@Instance_OnChange"
+                            OnFocusEvc="@_scriptsUser.Instance_OnFocus"
+                            OnBlurEvc="@_scriptsUser.Instance_OnBlur"
+                @ref="@_txtInstance" />
+
+                <WoInputAlert SetStatus="@SetStatusWiaInstance" @ref="@_wiaInstance" />
+            </TemplateFragment>
+
+        </WoFormItem>
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["Udn"]"
+                    SetStatus="@SetStatusFliUdn"
+        @ref="@_fliUdn">
+
+            <TemplateFragment>
+                <WoTextEdit Id="txtUdn"
+                            TApp="App"
+                            Value="@_scriptsUser.InstanciaUdnAsignar.Udn"
+                            IsRequired="@true"
+                            SetStatus="@SetStatusTxtUdn"
+                            ValueChangedEvc="@Udn_OnChange"
+                            OnFocusEvc="@_scriptsUser.Udn_OnFocus"
+                            OnBlurEvc="@_scriptsUser.Udn_OnBlur"
+                @ref="@_txtUdn" />
+
+                <WoInputAlert SetStatus="@SetStatusWiaUdn" @ref="@_wiaUdn" />
+            </TemplateFragment>
+
+        </WoFormItem>
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["Anio"]"
+                    SetStatus="@SetStatusFliYear"
+        @ref="@_fliYear">
+
+            <TemplateFragment>
+                <WoComboEdit TData="int"
+                             TApp="App"
+                             Id="cmbYear"
+                             Data="@_scriptsUser.Years"
+                             Value="@_scriptsUser.InstanciaUdnAsignar.Year"
+                             IsRequired="@true"
+                             SetStatus="@SetStatusCmbYear"
+                             ValueChangedEvc="@Year_OnChange"
+                             OnFocusEvc="@_scriptsUser.Year_OnFocus"
+                             OnBlurEvc="@_scriptsUser.Year_OnBlur"
+                             PlaceHolder="Año"
+                @ref="@_cmbYear" />
+
+                <WoInputAlert SetStatus="@SetStatusWiaYear" @ref="@_wiaYear" />
+            </TemplateFragment>
+
+        </WoFormItem>
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["InstanceType"]"
+                    SetStatus="@SetStatusFliInstanceType"
+        @ref="@_fliInstanceType">
+
+            <TemplateFragment>
+                <WoComboEdit Id="cmbInstanceType"
+                             TApp="App"
+                             TData="tWoIntanciaType"
+                             Data="@(Enum.GetValues(typeof(tWoIntanciaType)).OfType<tWoIntanciaType>().ToList())"
+                             Value="@_scriptsUser.InstanciaUdnAsignar.InstanceType"
+                             IsRequired="@true"
+                             SetStatus="@SetStatusTxtInstanceType"
+                             ValueChangedEvc="@InstanceType_OnChange"
+                             OnFocusEvc="@_scriptsUser.InstanceType_OnFocus"
+                             OnBlurEvc="@_scriptsUser.InstanceType_OnBlur"
+                @ref="@_cmbInstanceType" />
+
+                <WoInputAlert SetStatus="@SetStatusWiaInstanceType" @ref="@_wiaInstanceType" />
+            </TemplateFragment>
+
+        </WoFormItem>
+
+        <WoFormItem ColSpan="4"
+                    BeginRow
+                     SetStatus="SetStatusFliLogin">
+             <TemplateFragment>
+                 <WoButton 
+                           Id="btnLogin"
+                           OnClickEvc="@Login_OnClick"
+                           Caption="@Localizer["Login"]"
+                           Icon="eBoostrapIcons.boxarrowinright"
+                           SetStatus="@SetStatusBtnLogin"
+                 @ref="_btnLogin" />
+
+             </TemplateFragment>
+         </WoFormItem>
+
+
+     </WoFormGroup>
+ </WoForm>

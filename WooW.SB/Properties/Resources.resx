@@ -1,0 +1,1744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dbTable-Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Edit.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Project-Task-Remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Project-Task-Remove1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database-Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database-Add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Users.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code-Snippet-Tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Code-Snippet-Tick.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code-Snippet-Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Code-Snippet-Delete1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code-Snippet-Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Code-Snippet-Save1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonConfiguracion" xml:space="preserve">
+    <value>{
+"Alto": 0,
+"Ancho": 0,
+"Estados":
+    [
+        {
+        "Abscisa": 100.0,
+        "EtiquetaId": "Nulo",
+        "Id": "Nulo",
+        "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+        "NumId": 0,
+        "Ordenada": 150.0,
+        "SubTipo": 0,
+        "Tipo": 0
+        },
+        {
+        "Abscisa": 400.0,
+        "EtiquetaId": "Activo",
+        "Id": "Activo",
+        "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+        "NumId": 100,
+        "Ordenada": 150.0,
+        "SubTipo": 0,
+        "Tipo": 1
+        }
+    ],
+"Roles":
+    [
+    ],
+"Transiciones":
+    [
+        {
+        "Abscisa": 0.0,
+        "BeginItemPointIndex": 1,
+        "DTO":
+            {
+            "Colleccion":
+                [
+                ],
+            "Columnas":
+                [
+                ]
+            },
+        "EndItemPointIndex": 6,
+        "EstadoFinal": 100,
+        "EstadoInicial": 0,
+        "EtiquetaId": "DarDeAlta",
+        "FirstControlPoint":
+            {
+            "IsEmpty": false,
+            "x": 300.0,
+            "y": 122.899994
+            },
+        "FourControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Id": "Nuevo",
+        "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+        "Ordenada": 0.0,
+        "Permisos":
+            [
+                {
+                "PermisoId": "WoCatalogoNuevo"
+                }
+            ],
+        "SecondControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "ThirdControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Tipo": 1
+        },
+        {
+        "Abscisa": 0.0,
+        "BeginItemPointIndex": 0,
+        "DTO":
+            {
+            "Colleccion":
+                [
+                ],
+            "Columnas":
+                [
+                ]
+            },
+        "EndItemPointIndex": 7,
+        "EstadoFinal": 100,
+        "EstadoInicial": 100,
+        "EtiquetaId": "Modificar",
+        "FirstControlPoint":
+            {
+            "IsEmpty": false,
+            "x": 550.0,
+            "y": 50.0
+            },
+        "FourControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Id": "Modificar",
+        "IdGrafico": "88f2f384-9606-4a99-b0ae-c1376f988f78",
+        "Ordenada": 0.0,
+        "Permisos":
+            [
+                {
+                "PermisoId": "WoCatalogoModificar"
+                }
+            ],
+        "SecondControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "ThirdControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Tipo": 1
+        }
+    ]
+}</value>
+  </data>
+  <data name="Dev-Project-Options" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Project-Options.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Service-Run 16 x 16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Service-Run 16 x 16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Script" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Script.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Project-Task-Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Project-Task-Delete1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Class.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database-Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database-Run.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom-In-More" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zoom-In-More.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonParametro" xml:space="preserve">
+    <value>{
+"Alto": 0,
+"Ancho": 0,
+"Estados":
+    [
+        {
+        "Abscisa": 100.0,
+        "EtiquetaId": "Nulo",
+        "Id": "Nulo",
+        "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+        "NumId": 0,
+        "Ordenada": 150.0,
+        "SubTipo": 0,
+        "Tipo": 0
+        },
+        {
+        "Abscisa": 400.0,
+        "EtiquetaId": "Activo",
+        "Id": "Activo",
+        "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+        "NumId": 100,
+        "Ordenada": 150.0,
+        "SubTipo": 0,
+        "Tipo": 1
+        }
+    ],
+"Roles":
+    [
+    ],
+"Transiciones":
+    [
+        {
+        "Abscisa": 0.0,
+        "BeginItemPointIndex": 1,
+        "DTO":
+            {
+            "Colleccion":
+                [
+                ],
+            "Columnas":
+                [
+                ]
+            },
+        "EndItemPointIndex": 6,
+        "EstadoFinal": 100,
+        "EstadoInicial": 0,
+        "EtiquetaId": "DarDeAlta",
+        "FirstControlPoint":
+            {
+            "IsEmpty": false,
+            "x": 300.0,
+            "y": 122.899994
+            },
+        "FourControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Id": "Nuevo",
+        "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+        "Ordenada": 0.0,
+        "Permisos":
+            [
+                {
+                "PermisoId": "WoCatalogoNuevo"
+                }
+            ],
+        "SecondControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "ThirdControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Tipo": 0
+        },
+        {
+        "Abscisa": 0.0,
+        "BeginItemPointIndex": 0,
+        "DTO":
+            {
+            "Colleccion":
+                [
+                ],
+            "Columnas":
+                [
+                ]
+            },
+        "EndItemPointIndex": 7,
+        "EstadoFinal": 100,
+        "EstadoInicial": 100,
+        "EtiquetaId": "Modificar",
+        "FirstControlPoint":
+            {
+            "IsEmpty": false,
+            "x": 550.0,
+            "y": 50.0
+            },
+        "FourControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Id": "Modificar",
+        "IdGrafico": "88f2f384-9606-4a99-b0ae-c1376f988f78",
+        "Ordenada": 0.0,
+        "Permisos":
+            [
+                {
+                "PermisoId": "WoCatalogoModificar"
+                }
+            ],
+        "SecondControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "ThirdControlPoint":
+            {
+            "IsEmpty": true,
+            "x": 0.0,
+            "y": 0.0
+            },
+        "Tipo": 0
+        }
+    ]
+}</value>
+  </data>
+  <data name="Class-Friend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Class-Friend.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh-All" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh-All.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Site-Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Site-Map.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Project-Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Project-Open.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Label-Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Label-Error.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Project-Task-Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Project-Task-Add1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Build-Selection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Build-Selection.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Relationships.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database-Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database-Delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom-Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zoom-Out.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonTransaccion" xml:space="preserve">
+    <value>{
+    "Alto": 0,
+    "Ancho": 0,
+    "Estados": [
+        {
+            "Abscisa": 100.0,
+            "EtiquetaId": "Nulo",
+            "Id": "Nulo",
+            "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+            "NumId": 0,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 400.0,
+            "EtiquetaId": "Activo",
+            "Id": "Pendiente",
+            "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+            "NumId": 100,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 1
+        },
+        {
+            "Abscisa": 700.0,
+            "EtiquetaId": "Descartado",
+            "Id": "Descartado",
+            "Idgrafico": "b75adbc2-89bd-42a6-ac90-a3bee74fe7a9",
+            "NumId": 600,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 2
+        },
+        {
+            "Abscisa": 400.0,
+            "EtiquetaId": "Aplicado",
+            "Id": "Aplicado",
+            "Idgrafico": "8c9c4226-5241-4adf-9ba7-f4e7eefe4577",
+            "NumId": 200,
+            "Ordenada": 425.0,
+            "SubTipo": 0,
+            "Tipo": 2
+        }
+    ],
+    "Roles": [
+    ],
+    "Transiciones": [
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 1,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 6,
+            "EstadoFinal": 100,
+            "EstadoInicial": 0,
+            "EtiquetaId": "Registrar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 300.0,
+                "y": 100.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Registrar",
+            "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionRegistrar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 3,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 5,
+            "EstadoFinal": 200,
+            "EstadoInicial": 0,
+            "EtiquetaId": "RegistrarYAfectar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 167.1,
+                "y": 492.1
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "RegistraYAfectar",
+            "IdGrafico": "4e5d463b-699f-428f-b6cb-84445d374c27",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionRegistrarYAfectar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 4,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 7,
+            "EstadoFinal": 200,
+            "EstadoInicial": 100,
+            "EtiquetaId": "Afectar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 325.0,
+                "y": 325.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Afectar",
+            "IdGrafico": "962da2e7-3f1f-46f4-a69c-f9178000e3b3",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionAfectar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 1,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 6,
+            "EstadoFinal": 600,
+            "EstadoInicial": 100,
+            "EtiquetaId": "Descartar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 600.0,
+                "y": 100.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Descartar",
+            "IdGrafico": "419f4ade-b770-4298-9526-dcd036b92c45",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionDescartar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 0,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 7,
+            "EstadoFinal": 100,
+            "EstadoInicial": 100,
+            "EtiquetaId": "Modificar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 550.0,
+                "y": 50.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Modificar",
+            "IdGrafico": "88f2f384-9606-4a99-b0ae-c1376f988f78",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionModificar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        }
+    ]
+}</value>
+  </data>
+  <data name="Query-Design" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Query-Design.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flow-Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flow-Chart.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Comment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Comment.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Save.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Factory-Details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Factory-Details.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Debug-Step-Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Debug-Step-Over.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Script-Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Script-Edit.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonCatalogo" xml:space="preserve">
+    <value>{
+    "Estados": [{
+            "Id": "Nulo",
+            "NumId": 0,
+            "EtiquetaId": "Nulo",
+            "Tipo": 0,
+            "SubTipo": 0,
+            "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+            "Ordenada": 150.0,
+            "Abscisa": 100.0
+        }, {
+            "Id": "Activo",
+            "NumId": 100,
+            "EtiquetaId": "Activo",
+            "Tipo": 1,
+            "SubTipo": 0,
+            "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+            "Ordenada": 150.0,
+            "Abscisa": 400.0
+        }, {
+            "Id": "Suspendido",
+            "NumId": 500,
+            "EtiquetaId": "Suspendido",
+            "Tipo": 2,
+            "SubTipo": 0,
+            "Idgrafico": "b75adbc2-89bd-42a6-ac90-a3bee74fe7a9",
+            "Ordenada": 150.0,
+            "Abscisa": 700.0
+        }, {
+            "Id": "Baja",
+            "NumId": 600,
+            "EtiquetaId": "DadoDeBaja",
+            "Tipo": 4,
+            "SubTipo": 0,
+            "Idgrafico": "8c9c4226-5241-4adf-9ba7-f4e7eefe4577",
+            "Ordenada": 375.0,
+            "Abscisa": 400.0
+        }
+    ],
+    "Transiciones": [{
+            "Id": "Nuevo",
+            "EtiquetaId": "DarDeAlta",
+            "EstadoInicial": 0,
+            "EstadoFinal": 100,
+            "Tipo": 0,
+            "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 300.0,
+                "y": 122.899994,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 1,
+            "EndItemPointIndex": 6,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                    "PermisoId": "WoCatalogoNuevo"
+                }
+            ]
+        }, {
+            "Id": "Activar",
+            "EtiquetaId": "Activar",
+            "EstadoInicial": 500,
+            "EstadoFinal": 100,
+            "Tipo": 0,
+            "IdGrafico": "962da2e7-3f1f-46f4-a69c-f9178000e3b3",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 600.0,
+                "y": 275.0,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 5,
+            "EndItemPointIndex": -1,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                    "PermisoId": "WoCatalogoActivar"
+                }
+            ]
+        }, {
+            "Id": "Suspender",
+            "EtiquetaId": "Suspender",
+            "EstadoInicial": 100,
+            "EstadoFinal": 500,
+            "Tipo": 0,
+            "IdGrafico": "419f4ade-b770-4298-9526-dcd036b92c45",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 600.0,
+                "y": 122.899994,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 1,
+            "EndItemPointIndex": 6,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                    "PermisoId": "WoCatalogoSuspender"
+                }
+            ]
+        }, {
+            "Id": "DarDeBaja",
+            "EtiquetaId": "DarDeBaja",
+            "EstadoInicial": 500,
+            "EstadoFinal": 600,
+            "Tipo": 0,
+            "IdGrafico": "eacc56aa-e9cf-4cc2-b269-69cc9eef4644",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 732.9,
+                "y": 407.9,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 4,
+            "EndItemPointIndex": 1,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                    "PermisoId": "WoCatalogoDarDeBaja"
+                }
+            ]
+        }, {
+            "Id": "Modificar",
+            "EtiquetaId": "Modificar",
+            "EstadoInicial": 100,
+            "EstadoFinal": 100,
+            "Tipo": 0,
+            "IdGrafico": "88f2f384-9606-4a99-b0ae-c1376f988f78",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 550.0,
+                "y": 50.0,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 0,
+            "EndItemPointIndex": 7,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                    "PermisoId": "WoCatalogoModificar"
+                }
+            ]
+        }
+    ],
+    "Ancho": 0,
+    "Alto": 0,
+    "Roles": []
+}</value>
+  </data>
+  <data name="dbTable-Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Refresh.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Design" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Project-Open1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Project-Open1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="News-View" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\News-View.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Report-Design" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Report-Design.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letra-w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letra-w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Project-Console" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Project-Console.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letra-w1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letra-w1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Project-Task-Complete-To-Status-Date" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Project-Task-Complete-To-Status-Date1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-etiquetas-32 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-etiquetas-32 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copy.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Repeat.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Build" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Build.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonTransaccionContable" xml:space="preserve">
+    <value>{
+    "Alto": 0,
+    "Ancho": 0,
+    "Estados": [
+        {
+            "Abscisa": 100.0,
+            "EtiquetaId": "Nulo",
+            "Id": "Nulo",
+            "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+            "NumId": 0,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 400.0,
+            "EtiquetaId": "Activo",
+            "Id": "Pendiente",
+            "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+            "NumId": 100,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 1
+        },
+        {
+            "Abscisa": 700.0,
+            "EtiquetaId": "Descartado",
+            "Id": "Descartado",
+            "Idgrafico": "b75adbc2-89bd-42a6-ac90-a3bee74fe7a9",
+            "NumId": 600,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 2
+        },
+        {
+            "Abscisa": 400.0,
+            "EtiquetaId": "Aplicado",
+            "Id": "Aplicado",
+            "Idgrafico": "8c9c4226-5241-4adf-9ba7-f4e7eefe4577",
+            "NumId": 200,
+            "Ordenada": 425.0,
+            "SubTipo": 0,
+            "Tipo": 2
+        },
+        {
+            "Abscisa": 700.0,
+            "EtiquetaId": "",
+            "Id": "Contabilizado",
+            "Idgrafico": "2648b106-320c-4bb8-a31b-676dbe375bdf",
+            "NumId": 300,
+            "Ordenada": 425.0,
+            "SubTipo": 0,
+            "Tipo": 3
+        }
+    ],
+    "Roles": [
+    ],
+    "Transiciones": [
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 1,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 6,
+            "EstadoFinal": 100,
+            "EstadoInicial": 0,
+            "EtiquetaId": "Registrar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 300.0,
+                "y": 100.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Registrar",
+            "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionRegistrar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 3,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 5,
+            "EstadoFinal": 200,
+            "EstadoInicial": 0,
+            "EtiquetaId": "RegistrarYAfectar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 167.1,
+                "y": 492.1
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "RegistraYAfectar",
+            "IdGrafico": "4e5d463b-699f-428f-b6cb-84445d374c27",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionRegistrarYAfectar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 4,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 7,
+            "EstadoFinal": 200,
+            "EstadoInicial": 100,
+            "EtiquetaId": "Afectar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 325.0,
+                "y": 325.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Afectar",
+            "IdGrafico": "962da2e7-3f1f-46f4-a69c-f9178000e3b3",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionAfectar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 1,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 6,
+            "EstadoFinal": 600,
+            "EstadoInicial": 100,
+            "EtiquetaId": "Descartar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 600.0,
+                "y": 100.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Descartar",
+            "IdGrafico": "419f4ade-b770-4298-9526-dcd036b92c45",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionDescartar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 0,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 7,
+            "EstadoFinal": 200,
+            "EstadoInicial": 200,
+            "EtiquetaId": "AntesContabilizar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 550.0,
+                "y": 575.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "AntesContabilizar",
+            "IdGrafico": "1acc56aa-e9cf-4cc2-b269-69cc9eef4644",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionAntesContabilizar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 2,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 5,
+            "EstadoFinal": 300,
+            "EstadoInicial": 200,
+            "EtiquetaId": "Contabilizar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 600.0,
+                "y": 575.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Contabilizar",
+            "IdGrafico": "eacc56aa-e9cf-4cc2-b269-69cc9eef4644",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionContabilizar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 6,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 1,
+            "EstadoFinal": 200,
+            "EstadoInicial": 300,
+            "EtiquetaId": "DesContabilizar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 600.0,
+                "y": 375.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Descontabilizar",
+            "IdGrafico": "aacc56aa-e9cf-4cc2-b269-69cc9eef4644",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionDescontabilizar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 0,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 7,
+            "EstadoFinal": 100,
+            "EstadoInicial": 100,
+            "EtiquetaId": "Modificar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 550.0,
+                "y": 50.0
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Modificar",
+            "IdGrafico": "88f2f384-9606-4a99-b0ae-c1376f988f78",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                    "PermisoId": "WoTransaccionModificar"
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        }
+    ]
+}</value>
+  </data>
+  <data name="Task-Schedule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Task-Schedule.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Users-Permission" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Users-Permission.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonNoAplica" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Window-Code" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Window-Code.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Build-Selection 16 x 16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Build-Selection 16 x 16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Categories-Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Categories-Add2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code-Snippet-Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Code-Snippet-Edit.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Indent-Increase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Indent-Increase.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Service-Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Service-Run.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Delete1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Project-Task-Incomplete-To-Status-Date" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Project-Task-Incomplete-To-Status-Date2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code-Snippet-Delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Code-Snippet-Delete2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonColumnaOrigen" xml:space="preserve">
+    <value>{
+    "Items": [{
+            "Numero": 0,
+            "Nombre": "Manual",
+            "EtiquetaId": "TransaccionManual"
+        }, {
+            "Numero": 1,
+            "Nombre": "Automatica",
+            "EtiquetaId": "TransaccionAutomatica"
+        }, {
+            "Numero": 2,
+            "Nombre": "Movil",
+            "EtiquetaId": "TransaccionMovil"
+        }, {
+            "Numero": 3,
+            "Nombre": "ConsumoServicio",
+            "EtiquetaId": "TransaccionPorConsumoDeServicio"
+        }, {
+            "Numero": 4,
+            "Nombre": "Interface",
+            "EtiquetaId": "TransaccionPorInterface"
+        }
+    ]
+}</value>
+  </data>
+  <data name="letter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dev-Project-Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Project-Save.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="History" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\History1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code-Snippet-Details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Code-Snippet-Details.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Com-Add-Ins" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Com-Add-Ins.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Document-C-Sharp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Document-C-Sharp.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Layout-To-Do-Bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Layout-To-Do-Bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Label.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expenses-Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Expenses-Error.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Query-Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Query-Run.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbLookup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbLookup.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Permission" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Permission1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dbTable-Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dbTable-Import.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Columns-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Columns-1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonControl" xml:space="preserve">
+    <value>{
+    "Estados": [{
+            "Id": "Nulo",
+            "NumId": 0,
+            "EtiquetaId": "Nulo",
+            "Tipo": 0,
+            "SubTipo": 0,
+            "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+            "Ordenada": 150.0,
+            "Abscisa": 100.0
+        }, {
+            "Id": "Activo",
+            "NumId": 100,
+            "EtiquetaId": "Activo",
+            "Tipo": 1,
+            "SubTipo": 0,
+            "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+            "Ordenada": 150.0,
+            "Abscisa": 400.0
+        }
+    ],
+    "Transiciones": [
+		{
+            "Id": "Nuevo",
+            "EtiquetaId": "Registrar",
+            "EstadoInicial": 0,
+            "EstadoFinal": 100,
+            "Tipo": 0,
+            "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 300.0,
+                "y": 122.899994,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 1,
+            "EndItemPointIndex": 6,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                }
+            ]
+        }, {
+            "Id": "Modificar",
+            "EtiquetaId": "Modificar",
+            "EstadoInicial": 100,
+            "EstadoFinal": 100,
+            "Tipo": 0,
+            "IdGrafico": "88f2f384-9606-4a99-b0ae-c1376f988f78",
+            "Abscisa": 0.0,
+            "Ordenada": 0.0,
+            "FirstControlPoint": {
+                "x": 550.0,
+                "y": 50.0,
+                "IsEmpty": false
+            },
+            "SecondControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "ThirdControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "FourControlPoint": {
+                "x": 0.0,
+                "y": 0.0,
+                "IsEmpty": true
+            },
+            "BeginItemPointIndex": 0,
+            "EndItemPointIndex": 7,
+			"DTO": {
+				"Colleccion": [],
+				"Columnas": []
+            },
+            "Permisos": [{
+                }
+            ]
+        }
+    ],
+    "Ancho": 0,
+    "Alto": 0,
+    "Roles": []
+}</value>
+  </data>
+  <data name="Footnote-Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Footnote-Next.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Indent-Decrease" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Indent-Decrease.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JsonKardex" xml:space="preserve">
+    <value>{
+    "Alto": 0,
+    "Ancho": 0,
+    "Estados": [
+        {
+            "Abscisa": 100.0,
+            "EtiquetaId": "Nulo",
+            "Id": "Nulo",
+            "Idgrafico": "69c3d485-3214-48d0-adf7-ed714e9d9292",
+            "NumId": 0,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 0
+        },
+        {
+            "Abscisa": 400.0,
+            "EtiquetaId": "Activo",
+            "Id": "Activo",
+            "Idgrafico": "6695305e-89c5-4375-91c4-e0b109c266de",
+            "NumId": 100,
+            "Ordenada": 150.0,
+            "SubTipo": 0,
+            "Tipo": 1
+        }
+    ],
+    "Roles": [
+    ],
+    "Transiciones": [
+        {
+            "Abscisa": 0.0,
+            "BeginItemPointIndex": 1,
+            "DTO": {
+                "Colleccion": [
+                ],
+                "Columnas": [
+                ]
+            },
+            "EndItemPointIndex": 6,
+            "EstadoFinal": 100,
+            "EstadoInicial": 0,
+            "EtiquetaId": "Registrar",
+            "FirstControlPoint": {
+                "IsEmpty": false,
+                "x": 300.0,
+                "y": 122.899994
+            },
+            "FourControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Id": "Nuevo",
+            "IdGrafico": "c45863e4-ec6d-4be7-855c-fa42609092d2",
+            "Ordenada": 0.0,
+            "Permisos": [
+                {
+                }
+            ],
+            "SecondControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "ThirdControlPoint": {
+                "IsEmpty": true,
+                "x": 0.0,
+                "y": 0.0
+            },
+            "Tipo": 0
+        }
+    ]
+}</value>
+  </data>
+  <data name="Dev-Project-New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev-Project-New.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-etiquetas-22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-etiquetas-22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

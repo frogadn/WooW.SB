@@ -1,0 +1,67 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name = "System.Xml.dll" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cshtml" #>
+@*///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\ServerTemplates\Pages\WoTemplateLayoutServer.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------*@
+
+@using Microsoft.AspNetCore.Components.Web
+@namespace <#=Project#>.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="_content/DevExpress.Blazor.Themes/bootstrap-external.bs5.min.css" />
+
+    <link rel="stylesheet" href="_content/DevExpress.Blazor.Reporting.Viewer/css/dx-blazor-reporting-components.bs5.css">
+    <link rel="stylesheet" href="css/bootstrap-icons/font/bootstrap-icons.css" />
+
+    <!-- Theme Switching -->
+    <link id="WoTheme" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
+    <script src="Js/WoThemeSwitcher.js"></script>
+    <!-- Theme Switching -->
+
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/StyleComponents.css" rel="stylesheet" />
+    <link href="<#=Project#>.styles.css" rel="stylesheet" />
+
+    @* Google Fonts *@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
+
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    @RenderBody()
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script defer src="_content/WooW.Blazor/WoScripts.js"></script>
+    <script defer src="Js/WoScripts.js"></script>
+</body>
+</html>
+
+<#+
+public string Project { get; set; } = "";
+public string ThemeName { get; set; } = "Default";
+#>

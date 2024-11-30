@@ -1,0 +1,133 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+
+using Microsoft.AspNetCore.WebUtilities;
+ 
+namespace <#=Project#>.Pages
+{
+	public partial class WoUrnRedirection
+    {
+        /// <summary>
+        /// Parámetro con la urn recuperada a través de la URL.
+        /// </summary>
+        private string _urn = string.Empty;
+
+        /// <summary>
+        /// Parámetro con la transición a realizar.
+        /// </summary>
+        private string __transition = string.Empty;
+
+        /// <summary>
+        /// Indica si se pasa el parámetro para copiar a un nuevo registro.
+        /// </summary>
+        private bool __copyToNew = false;
+
+        /// <summary>
+        /// Método de inicialización de la página.
+        /// </summary>
+        /// <returns></returns>
+        protected override async Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+
+            /// Recuperación del parámetro de la urn desde la pagina.
+            Uri? uri = NavigationManager?.ToAbsoluteUri(NavigationManager.Uri);
+
+            if (uri != null)
+            {
+                var queryStrings = QueryHelpers.ParseQuery(uri.Query);
+
+                if (queryStrings.TryGetValue("urn", out var urn))
+                {
+                    _urn = urn;
+
+                    if (queryStrings.TryGetValue("transition", out var transition))
+                    {
+                        __transition = transition;
+                    }
+
+                    if (queryStrings.TryGetValue("copyToNew", out var copyToNew))
+                    {
+                        __copyToNew = Convert.ToBoolean(copyToNew);
+                    }
+                }
+
+                await MoveTo();
+            }
+            else
+            {
+                await MoveTo();
+            }
+        }
+
+        /// <summary>
+        /// Redirige a la página correspondiente en función de la información de la urn.
+        /// </summary>
+        /// <returns></returns>
+        private async Task MoveTo()
+        {
+            if (NavigationManager != null)
+            {
+                if (_urn != string.Empty)
+                {
+                    string[] urnCol = _urn.Split(':');
+                    NavigationManager.NavigateTo("/");
+
+                    if (urnCol.Length > 1)
+                    {
+                        string model = urnCol[1];
+                        string id = urnCol[2];
+
+                        (string type, string process)? modelData = _modelData.GetValueOrDefault(model.ToLower());
+
+                        if (modelData != null && modelData.Value.process != null)
+                        {
+                            if (__transition != string.Empty)
+                            {
+                                if (__copyToNew)
+                                {
+                                    NavigationManager.NavigateTo($"/{modelData.Value.process}/{modelData.Value.type}/{model}?__Id={id}&__Transition={__transition}&__CopyToNew=true");
+                                }
+                                else
+                                {
+                                    NavigationManager.NavigateTo($"/{modelData.Value.process}/{modelData.Value.type}/{model}?__Id={id}&__Transition={__transition}");
+                                }
+                            }
+                            else
+                            {
+                                NavigationManager.NavigateTo($"/{modelData.Value.process}/{modelData.Value.type}/{model}?Id={id}");
+                            }
+                        }
+                        else
+                        {
+                            NavigationManager.NavigateTo("/");
+                        }
+
+                    }
+                    else
+                    {
+                        NavigationManager.NavigateTo("/");
+                    }
+                }
+                else
+                {
+                    NavigationManager.NavigateTo("/");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Diccionario con la relación de los modelos con sus procesos
+        /// </summary>
+        private Dictionary<string, (string type, string process)> _modelData = new Dictionary<string, (string type, string process)>()
+        {
+            <#=Models#>
+        };
+    }
+
+}
+
+<#+
+public string Project { get; set; } = "";
+public string Models { get; set; } = "";
+#>

@@ -1,0 +1,92 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="WooW.Core" #>
+<#@ import namespace="WooW.SB.Config" #>
+<#@ import namespace="WooW.SB.Config.Enum" #>
+<#@ import namespace="WooW.SB.Config.Helpers" #>
+using System;
+using System.Data;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.Core.Common;
+using WooW.DTO;
+using WooW.Core.Common;
+using WooW.WebService.WoSchemaAnalysis;
+
+namespace WooW.Model
+{
+    //
+    //
+    // No modifique las estructura de la llamada del metodo
+    // Pude agregar a la clase propiedades, metodos o funciones
+    //
+    // Generado por ttModeloScriptCreacion
+    //
+
+    public class <#=modelo.Id#>Create<#=extension#>
+    {
+        //
+        // Este metodo se llama para crear o actualizar la tabla
+        // Si no existe el metodo solamente llama CreateTableIfNotExists
+        //
+        public static void Do(IDbConnection Db, tWoIntanciaType IntanciaType, tWoDataBaseProviders DbProvider)
+        {
+<#          if(string.IsNullOrEmpty(extension)) {#>
+<#          if(modelo.TipoModelo != WoTypeModel.View) {#>
+            if (!Db.CreateTableIfNotExists<<#=modelo.Id#>>())
+            {
+                WoSchema.AddMissingColumns<<#=modelo.Id#>>(Db, DbProvider);
+            }
+<#          } else {#>
+            // 
+            // Esta es una propuesta de creación de la Database View
+            // Debe ser revisa y tuneada por el programador
+            //
+            Db.ExecuteSql("DROP VIEW IF EXISTS <#=modelo.Id#>;");
+            Db.ExecuteSql(
+@"
+CREATE VIEW <#=modelo.Id#> AS 
+   SELECT
+<#      bool Inicio = true;
+        List<string> Tablas = new List<string>();
+        foreach(ModeloColumna col in modelo.Columnas.Where(x => !string.IsNullOrEmpty(x.Legacy)).OrderBy( e => e.Orden )) {
+            string sTabla = col.Legacy.Substring(0, col.Legacy.IndexOf("."));
+            if(Tablas.IndexOf(sTabla) == -1)
+                Tablas.Add(sTabla);
+            if(Inicio) {#>
+            <#=col.Legacy#> AS <#=col.Id#> 
+<#          } else {#>
+            , <#=col.Legacy#> AS <#=col.Id#> 
+<#          }
+            Inicio = false;
+        } #>
+   FROM 
+<#      Inicio = true;
+        string Anterior = string.Empty;
+        foreach(string Tabla in Tablas) {
+            if(Inicio) {#>
+            <#=Tabla#> 
+<#              Anterior = Tabla;
+            } else {#>
+            INNER JOIN <#=Tabla#> ON <#=Anterior#>.Id = <#=Tabla#>.<#=Anterior#>Id
+<#          }
+            Inicio = false;
+        } #>
+;");
+<#          }#>
+<#          }#>
+        }
+    }
+}
+<#+
+public Modelo modelo { get; set; }  
+public string extension { get; set; }
+#>

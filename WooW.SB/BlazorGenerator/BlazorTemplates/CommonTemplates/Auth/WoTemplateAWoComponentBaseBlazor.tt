@@ -1,0 +1,145 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Auth\WoTemplateAWoComponentBaseBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using ServiceStack;
+using System.Net.Http.Headers;
+using WooW.Core;
+
+namespace <#=Project#>.Auth
+{
+    public class AWoComponentBase : ComponentBase
+    {
+     #region Parámetros en cascada
+
+        /// <summary>
+        /// Parámetro en cascada recuperado desde el App.razor.
+        /// </summary>
+        [CascadingParameter]
+        protected Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+        #endregion Parámetros en cascada
+
+        #region Session Data
+
+        /// <summary>
+        /// Variable de sesión.
+        /// Se salva en el local storage del navegador.
+        /// </summary>
+        protected AuthenticateResponse? AuthResult;
+
+        /// <summary>
+        /// Información de la udn actual.
+        /// Se salva en el local storage del navegador.
+        /// </summary>
+        protected WoInstanciaUdnResponse? UdnResult;
+
+        /// <summary>
+        /// Informacion de la seson solo para mostrar.
+        /// </summary>
+        protected SessionData SessionData { get; set; } = new SessionData();
+
+        #endregion Session Data
+
+        #region Instancias inyectadas
+
+        /// <summary>
+        /// Inyección del proveedor de autenticación.
+        /// </summary>
+        [Inject]
+        protected WoAuthenticationStateProvider? AuthStateProvider { get; set; }
+
+        /// <summary>
+        /// Cliente inyectado desde el contenedor de dependencias de blazor.
+        /// </summary>
+        [Inject]
+        protected JsonApiClient? Client { get; set; }
+
+        /// <summary>
+        /// Inyección del gestor de navegación.
+        /// </summary>
+        [Inject]
+        protected NavigationManager? NavigationManager { get; set; }
+
+        #endregion Instancias inyectadas
+
+        #region Métodos principales
+
+        /// <summary>
+        /// Retorna el cliente de ServiceStack.
+        /// Prevalida si este esta autenticado.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<JsonApiClient?> GetClientAsync()
+        {
+            try
+            {
+                string[] instanceData = { "" };
+
+                if (AuthStateProvider != null && Client != null)
+                {
+                    try
+                    {
+                        AuthResult = await AuthStateProvider.LocalStorage.GetItemAsync<AuthenticateResponse>("A");
+                        UdnResult = await AuthStateProvider.LocalStorage.GetItemAsync<WoInstanciaUdnResponse>("U");
+                        SessionData = await AuthStateProvider.LocalStorage.GetItemAsync<SessionData>("S");
+                        if (UdnResult != null)
+                        {
+                            instanceData = UdnResult.Result.Split(' ');
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception($@"Not Loged: {ex.Message}");
+                    }
+
+                    try
+                    {
+                        if (AuthResult != null)
+                        {
+                            Client.BearerToken = AuthResult.BearerToken;
+                            Client.GetHttpClient().DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AuthResult.BearerToken);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (AuthResult != null)
+                        {
+                            throw new Exception($@"La autorización expiro: {ex.Message}");
+                        }
+                    }
+
+                    if (AuthResult != null)
+                    {
+                        Client.UserName = AuthResult.UserName;
+                        Client.SessionId = AuthResult.SessionId;
+                    }
+                }
+                else
+                {
+                    throw new Exception($@"La variable AuthStateProvider o el cliente es nulo en en GetClient");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return Client;
+        }
+
+        #endregion Métodos principales      
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+#>

@@ -1,0 +1,47 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name = "System.Xml.dll" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".razor" #>
+@*///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateIndexRazorBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------*@
+
+@inherits AWoComponentBase
+
+@page "/WoLogChanges"
+
+@attribute [Authorize]
+
+@inject IStringLocalizer<App> Localizer
+
+@*Formulario*@
+<WoForm>
+    <WoFormGroup Caption="@Localizer["URN Settings"]"
+                 ColSpan=12
+                 BeginRow="true">
+
+        <WoFormItem ColSpan="12"
+                    BeginRow="true"
+                    Caption="@Localizer["Id"]">
+
+            <TemplateFragment>
+                <WoTextEdit Id="txtUrnId"
+                            TApp="App"
+                            Value="@_urnId"
+                            IsRequired="@true"
+                            ValueChangedEvc="@UrnIdChange" />
+
+            </TemplateFragment>
+
+        </WoFormItem>
+
+    </WoFormGroup>
+</WoForm>
+
+<H2>@_error</H2>
+
+<WoLogPanel TApp="App" Changes="@Changes" URN="@__urn" />

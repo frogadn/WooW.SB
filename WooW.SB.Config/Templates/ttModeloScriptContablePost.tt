@@ -1,0 +1,117 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="WooW.Core" #>
+<#@ import namespace="WooW.Core.Common" #>
+using System;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.DTO;
+
+
+namespace WooW.Model
+{
+    //
+    // Parámetro mod<#=modelo.Id#> modelo a insert o actualizar
+    // Parámetro cur<#=modelo.Id#> modelo que actualmente esta registrado
+    //
+    // No modifique las estructura de la llamada del método
+    // Pude agregar a la clase propiedades, métodos o funciones
+    //
+    // Generado por ttModeloScriptContablePost
+    //
+
+    public partial class <#=modelo.Id#>PostConditions<#=extension#>
+    {
+        public <#=modelo.Id#>PostConditions<#=extension#>(WoTargetConnection woTarget)
+        {
+
+        }
+
+		#region Afectar
+        private void Afectar<MOD>(WoTargetConnection woTarget, MOD mod<#=modelo.Id#>)
+            where MOD : <#=modelo.Id#>, new()
+        {
+
+        }
+		#endregion Afectar
+
+<#     foreach(Transicion tra in modelo.Diagrama.Transiciones.Where( e => e.EstadoInicial == 0 ) )
+        {#> 
+    
+        // Método para el modelo <#=modelo.Id#> de post condición para la transición <#=tra.Id#> de <#=tra.EstadoInicial#> a <#=tra.EstadoFinal#>
+        #region <#=modelo.Id#><#=tra.Id#>
+        public void <#=modelo.Id#><#=tra.Id#><MOD>(WoTargetConnection woTarget, MOD mod<#=modelo.Id#> )
+            where MOD : <#=modelo.Id#>, new()
+        {
+<#          if(tra.EstadoFinal == 200) // Afectar
+            {#>
+			Afectar<MOD>(woTarget, mod<#=modelo.Id#>);
+<#          }#>
+        }
+        #endregion <#=modelo.Id#><#=tra.Id#>
+<#      }#> 
+
+<#  foreach(Transicion tra in modelo.Diagrama.Transiciones.Where( e => e.EstadoInicial != 0 && e.EstadoFinal != 300 ).OrderBy( e => e.EstadoInicial ) )
+    {#> 
+    
+        // Método para el modelo <#=modelo.Id#> de post condición para la transición <#=tra.Id#> de <#=tra.EstadoInicial#> a <#=tra.EstadoFinal#>
+        #region <#=modelo.Id#><#=tra.Id#>
+        public void <#=modelo.Id#><#=tra.Id#><MOD>(WoTargetConnection woTarget, MOD mod<#=modelo.Id#>, MOD cur<#=modelo.Id#> )
+            where MOD : <#=modelo.Id#>, new()
+        {
+<#          if(extension == string.Empty) {#>            			
+<#          if((modelo.TipoModelo == WoTypeModel.TransactionContable) && (tra.EstadoInicial == 300) && (tra.EstadoFinal == 200)) // Descontabilizar
+            {#>
+			HelperContabilidad.Descontabilizar(woTarget, mod<#=modelo.Id#>);
+			woTarget.Db.UpdateOnly(() => new <#=modelo.Id#> { <#=WoConst.WOCONPOLIZAID#> = null }, where: p => p.Id == mod<#=modelo.Id#>.GetObjectId().ToString());
+<#          }
+            else if(tra.EstadoFinal == 200) // Afectar
+            {#>
+			Afectar<MOD>(woTarget, mod<#=modelo.Id#>);
+<#          }#>
+<#          }#>
+        }
+        #endregion <#=modelo.Id#><#=tra.Id#>
+<#  }#>
+
+<#  foreach(Transicion tra in modelo.Diagrama.Transiciones.Where( e => ((modelo.TipoModelo == WoTypeModel.TransactionContable) && (e.EstadoFinal == 300)) ) )
+    {#> 
+        #region <#=modelo.Id#><#=tra.Id#>
+        public void <#=modelo.Id#><#=tra.Id#><MOD>(WoTargetConnection woTarget, MOD mod<#=modelo.Id#>, MOD cur<#=modelo.Id#> )
+            where MOD : <#=modelo.Id#>, new()
+        {
+<#          if(extension == string.Empty) {#>            			
+			WoConPolizaRegistraYAfectar conPoliza = CreaPoliza(woTarget, mod<#=modelo.Id#>, false);
+			
+			var oConPoliza = WoConPoliza.Post(woTarget, conPoliza);
+			
+			woTarget.Db.UpdateOnly(() => new <#=modelo.Id#> { <#=WoConst.WOCONPOLIZAID#> = oConPoliza.Id }, where: p => p.Id == mod<#=modelo.Id#>.GetObjectId().ToString());
+<#          }#>			
+		}
+
+<#          if(extension == string.Empty) {#>            		
+		public WoConPolizaRegistraYAfectar PolizaPrevia<MOD>(WoTargetConnection woTarget, MOD mod<#=modelo.Id#> )
+			where MOD : <#=modelo.Id#>, new()
+		{
+
+			return CreaPoliza(woTarget, mod<#=modelo.Id#>, true);
+		}
+<#          }#>
+
+        #endregion <#=modelo.Id#><#=tra.Id#>
+<#  }#>
+
+    }
+}
+<#+
+public Modelo modelo { get; set; }  
+public string extension { get; set; }
+#>

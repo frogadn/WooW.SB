@@ -1,0 +1,31 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Reports\WoTemplateReportPartialBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using DevExpress.XtraReports.UI;
+using Newtonsoft.Json;
+using System.Data;
+using System.Text;
+using WooW.Blazor.Services.WoCommonServices;
+using WooW.Blazor.UI.WoAlerts.FormAlert;
+using WooW.Blazor.UI.WoReportViewer.Helpers;
+using WooW.Blazor.UI.WoResources;
+using <#=Project#>.ControlModels;
+using <#=Project#>.UserCode;
+using WooW.Model;
+
+namespace <#=Project#>.<#=Directory#>
+{
+    <#=Code#>
+}
+
+<#+
+public string Code { get; set; } = "";
+public string Project { get; set; } = "";
+public string Directory { get; set; } = "";
+#>

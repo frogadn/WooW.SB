@@ -1,0 +1,50 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ output extension=".razor" #>
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Reports\WoTemplateReportFormsPartialBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using <#=Project#>.ControlModels;
+using <#=Project#>.FluentValidators;
+using <#=Project#>.UserCode;
+using FluentValidation.Results;
+using static ServiceStack.Diagnostics.Events;
+using WooW.Blazor.Services.WoLookUpServices;
+using WooW.DTO;
+using WooW.Model;
+using WooW.Blazor.UI.WoResources;
+using WooW.Blazor.UI.WoAlerts.FormAlert;
+using WooW.Blazor.UI.WoForm.Form;
+using WooW.Blazor.UI.WoForm.FormGroup;
+using WooW.Blazor.UI.WoAlerts.InputAlert;
+using WooW.Blazor.UI.WoForm.FormItem;
+using WooW.Blazor.UI.WoInputs.TextEdit;
+using WooW.Blazor.UI.WoInputs.ComboEdit;
+using WooW.Blazor.UI.WoInputs.SpinEdit;
+using System.Reflection;
+using System.Text;
+using WooW.Blazor.Services.WoLookUpDialogServices;
+using WooW.Blazor.Services.WoServiceModels;
+using WooW.Blazor.UI.WoInputs.LookupDialogEdit;
+using WooW.Core;
+using WooW.Blazor.UI.WoInputs.LookupEdit;
+using WooW.Blazor.UI.WoInputs.ComboEnumEdit;
+
+ 
+
+namespace <#=Project#>.<#=Directory#>
+{
+<#=Code#>
+}
+
+ 
+
+<#+
+public string Code { get; set; } = "";
+public string Project { get; set; } = "";
+public string Directory { get; set; } = "";
+#>

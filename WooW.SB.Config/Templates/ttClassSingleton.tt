@@ -1,0 +1,40 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="WooW.Core" #>
+using System;
+using System.IO;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.Text;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.DTO;
+using WooW.Model;
+using WooW.Interface;
+using Newtonsoft.Json;
+using ServiceStack.Web; 
+
+namespace WooW.Model
+{
+    public partial class <#=classScript.Id#> <#=ParentClass#>
+    {
+<# if(!((classScript.SubTipoModelo == WoSubTypeModel.Extension) || (classScript.SubTipoModelo == WoSubTypeModel.Override))) { #>
+        private WoTargetConnection woTarget;
+
+        public <#=classScript.Id#>(WoTargetConnection _woTarget) 
+        {
+            woTarget = _woTarget;
+        }
+<# } #>
+    }
+}
+<#+
+public Modelo classScript { get; set; }  
+public string ParentClass { get; set; }  
+#>

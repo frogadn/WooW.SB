@@ -1,0 +1,123 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateLayoutPartialBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using Microsoft.AspNetCore.WebUtilities;
+using <#=Project#>.Auth;
+using WooW.Core;
+
+namespace <#=Project#>.Pages
+{
+    public partial class WoLog : AWoComponentBase
+    {
+        /// <summary>
+        /// Objeto con los cambios que se an realizado
+        /// </summary>
+        private WoLogChanges Changes { get; set; }
+
+        /// <summary>
+        /// urn de la que se buscan los cambios
+        /// </summary>
+        private string __urn = "urn:<#=Model#>:<#=Id#>";
+
+        /// <summary>
+        /// error en la petición o en el funcionamiento general
+        /// </summary>
+        private string _error = string.Empty;
+
+        /// <summary>
+        /// Inicialización del cliente y petición de la data
+        /// </summary>
+        /// <returns></returns>
+        protected override async Task OnInitializedAsync()
+        {
+            try
+            {
+                _error = string.Empty;
+                Uri? uri = NavigationManager?.ToAbsoluteUri(NavigationManager.Uri);
+                if (uri != null)
+                {
+                    var queryString = QueryHelpers.ParseQuery(uri.Query);
+
+                    if (queryString.TryGetValue("urn", out var urn)) 
+                    {
+                        __urn = urn;
+                    }
+                }
+
+                Client = await GetClientAsync();
+                if (Client != null)
+                {
+                    if (__urn != null && (__urn.Split(":").Length == 3))
+                    {
+                        _urnId = __urn.Split(":")[2];
+                        await GetLogData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _error = $@"Error en el método de inicio de la pantalla. {ex.Message}";
+                StateHasChanged();
+            }
+        }
+
+        /// <summary>
+        /// Realiza la petición de la información del log en función de la URN
+        /// y carga la información en el objeto changes
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private async Task GetLogData()
+        {
+            try
+            {
+                Changes = await Client.SendAsync<WoLogChanges>(new WoLogRequest()
+                {
+                    Urn = __urn,
+                });
+            }
+            catch (Exception ex)
+            {
+                _error = $@"Error en la petición de la data. {ex.Message}";
+                StateHasChanged();
+            }
+        }
+
+        #region Update Id
+
+        /// <summary>
+        /// Determina el identificador del log
+        /// </summary>
+        private string _urnId = string.Empty;
+
+        /// <summary>
+        /// Método de cambio del valor del id desde el formulario
+        /// </summary>
+        /// <param name="newValue"></param>
+        private async void UrnIdChange(string newValue)
+        {
+            _urnId = newValue;
+
+            if (_urnId != string.Empty)
+            {
+                string[] urnCol = __urn.Split(":");
+                __urn = $@"{urnCol[0]}:{urnCol[1]}:{newValue}";
+                await GetLogData();
+            }
+        }
+
+        #endregion Update Id
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+public string Model { get; set; } = "";
+public string Id { get; set; } = "";
+#>

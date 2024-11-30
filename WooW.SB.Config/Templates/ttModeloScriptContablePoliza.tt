@@ -1,0 +1,63 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="WooW.Core.Common" #>
+using System;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.DTO;
+
+
+namespace WooW.Model
+{
+    //
+    // Parámetro mod<#=modelo.Id#> modelo a insert o actualizar
+    // Parámetro cur<#=modelo.Id#> modelo que actualmente esta registrado
+    //
+    // No modifique las estructura de la llamada del método
+    // Pude agregar a la clase propiedades, métodos o funciones
+    //
+    // Generado por ttModeloScriptContablePoliza
+    //
+
+    public partial class <#=modelo.Id#>PostConditions
+    {	
+		private WoConPolizaRegistraYAfectar CreaPoliza<MOD>(WoTargetConnection woTarget, MOD mod<#=modelo.Id#>, bool Previo )
+			where MOD : <#=modelo.Id#>
+		{
+
+			var oSysEmpresa = SysEmpresa.Single(woTarget);
+			
+			var WoConPoliza = new WoConPolizaRegistraYAfectar()
+			{
+			    Id = string.Empty,
+			    <#=WoConst.WOUDNID#> = mod<#=modelo.Id#>.<#=WoConst.WOUDNID#>,
+			    Serie = "...",
+			    Folio = 0,
+			    Accion = eWoConPoliza_Accion.Diario, // Poner el tipo,
+			    Tipo = eWoConPoliza_Tipo.NA,
+			    Fecha = mod<#=modelo.Id#>.Fecha,
+			    Origen = eWoConPoliza_Origen.Automatica,
+			    Observacion = null,
+			    <#=WoConst.WOPERIODOID#> = mod<#=modelo.Id#>.<#=WoConst.WOPERIODOID#>,
+			    Descripcion = string.Format("<#=modelo.Id#> {0} {1}", mod<#=modelo.Id#>.CreateUrn(), mod<#=modelo.Id#>.Accion.ToString()), // Poner la descripcion
+			    UrnTransaccion = mod<#=modelo.Id#>.CreateUrn(),
+                WoConPolizaDetCol = new List<WoConPolizaDetRegistraYAfectar>(),
+                WoGuid = Guid.NewGuid().ToString(),
+			    WoState = eWoConPoliza_WoState.Aplicado
+			};
+
+            throw new Exception("Póliza <#=modelo.Id#> no implementada");
+        }
+    }
+}
+<#+
+public Modelo modelo { get; set; }  
+#>

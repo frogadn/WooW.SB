@@ -1,0 +1,51 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.DTO;
+using WooW.Model;
+
+
+namespace WooW.Model
+{
+    //
+    // Parámetro <#=request.Id#> request
+    // Parámetro <#=responseId#> response
+    //
+    // No modifique las estructura de la llamada del método
+    // Pude agregar a la clase propiedades, métodos o funciones
+    //
+    // Generado por ttModeloScript
+    //
+    public class <#=request.Id#>Script
+    {
+        // Método para el request <#=request.Id#> 
+<#  if(coleccion)
+    {#>
+        public IList<RES> <#=request.Id#>Get<REQ, RES>(WoTargetConnection woTarget, REQ req<#=request.Id#> )
+<#  }
+    else
+    {#>
+        public RES <#=request.Id#>Get<REQ, RES>(WoTargetConnection woTarget, REQ req<#=request.Id#> )
+<#  }#>
+            where REQ : <#=request.Id#>, new()
+            where RES : <#=responseId#>, new()
+        {
+            return null;
+        }
+    }
+}
+<#+
+public Modelo request { get; set; }  
+public string responseId { get; set; }  
+public bool coleccion { get; set; }  
+#>

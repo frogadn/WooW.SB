@@ -1,0 +1,750 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <TransformOnBuild>true</TransformOnBuild>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>1701;1702;CA1416;</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>letter.ico</ApplicationIcon>
+    <Copyright>Derechos Reservados Frog SA de CV</Copyright>
+    <Authors>Frog Sa de Cv</Authors>
+    <Company>Frog Sa de Cv</Company>    
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>1701;1702;CA1416;</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Auth\WoTemplateAWoComponentBaseBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateAWoComponentBaseBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Auth\WoTemplateWoAuthenticationStateProviderBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoAuthenticationStateProviderBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\ControlModels\WoTemplateLoginControlsBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLoginControlsBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\ControlModels\WoTemplateModelControlsBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateModelControlsBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\FluentValidators\WoTemplateInstanciaUdnAsignarValidatorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateInstanciaUdnAsignarValidatorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateIndexPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateIndexPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateIndexRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateIndexRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateLayoutPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLayoutPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateLayoutRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLayoutRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateWoUrnRedirectionPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoUrnRedirectionPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateWoUrnRedirectionRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoUrnRedirectionRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutCssBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateMainLayoutCssBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateMainLayoutPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateMainLayoutRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoHeaderLayoutRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoHeaderLayoutRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoHeaderSubItemsRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoHeaderSubItemsRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoLoginLayoutPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoLoginLayoutPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoLoginLayoutRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoLoginLayoutRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Slaves\WoTemplateSlavePartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateSlavePartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Themes\WoTemplateWoThemeSwitcherPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoThemeSwitcherPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Themes\WoTemplateWoThemeSwitcherRazorBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoThemeSwitcherRazorBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateLoginScriptsUserBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLoginScriptsUserBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateScriptsUserBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateScriptsUserBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateScriptsUserPartialBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateScriptsUserPartialBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WoTemplateImportsBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateImportsBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Css\WoTemplateSiteBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateSiteBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Css\WoTemplateStyleComponentsBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateStyleComponentsBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Js\WoTemplateWoScriptsBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoScriptsBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Js\WoTemplateWoThemeSwitcherBlazor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoThemeSwitcherBlazor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\ServerTemplates\Pages\WoTemplateLayoutServer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLayoutServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\ServerTemplates\Properties\WoTemplateLaunchSettingsServer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLaunchSettingsServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\ServerTemplates\Shared\WoTemplateWoHeaderLayoutPartialServer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoHeaderLayoutPartialServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\ServerTemplates\WoTemplateCsProjectServer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateCsProjectServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\ServerTemplates\WoTemplateProgramServer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateProgramServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\WasmTemplates\Properties\WoTemplateLaunchSettingsWasm.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLaunchSettingsWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\WasmTemplates\Shared\WoTemplateWoHeaderLayoutPartialWasm.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateWoHeaderLayoutPartialWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\WasmTemplates\WoTemplateCsProjectWasm.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateCsProjectWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\WasmTemplates\WoTemplateProgramWasm.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateProgramWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorGenerator\BlazorTemplates\WasmTemplates\WwwRoot\WoTemplateIndexHtmlWasm.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateIndexHtmlWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorTestGenerator\BuildTest\BaseForm\WoTemplateBaseTestJs.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateBaseTestJs.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BlazorTestGenerator\BuildTest\LaunchTestVisualCode\WoTemplateLaunchVisualCode.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WoTemplateLaunchVisualCode.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Designer\DesignerGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dialogs\fmSelectExtension.cs" />
+    <Compile Update="Designer\WoFormDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Designer\WoGridDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\fmMenus.cs" />
+    <Compile Update="Forms\fmReport.cs" />
+    <Compile Update="Forms\fmModelScript.cs" />
+    <Compile Update="Generator\BlazorServer\ServerTemplates\Index\PlantillaIndexPartialServer1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlantillaIndexPartialServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\Index\PlantillaIndexRazorServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlantillaIndexRazorServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateControlModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateControlModels.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateConvertDataTables.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateConvertDataTables.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateCsprojectServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateCsprojectServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateCssSite.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateCssSite.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateImports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateImports.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateInstanceData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateInstanceData.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateLaunchSettings.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateLaunchSettings.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateMainLayout.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateMainLayout.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateObjectsServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateObjectsServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateObservers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateObservers.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateProgramServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateProgramServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateUserCredentials.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateUserCredentials.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateHostServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateHostServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\ServerTemplates\WoTemplateLayoutServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateLayoutServer.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorServer\Report\WoReportBase.cs" />
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\ControlModels\WoTemplateModelControls.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateModelControls.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\ControlModels\WoTemplateModelControlsAux.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateModelControlsAux.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Credentials\WoTemplateInstanceDataWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateInstanceDataWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Credentials\WoTemplateUserCredentialsWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateUserCredentialsWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\FluentValidators\WoTemplateFluentValidatorReWriteWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateFluentValidatorReWriteWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\FluentValidators\WoTemplateFluentValidatorWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateFluentValidatorWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Observers\WoTemplateObserverController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateObserverController.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Pages\WoTemplateLayoutPartialWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateLayoutPartialWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Pages\WoTemplateLayoutRazorWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateLayoutRazorWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Properties\WoTemplateLaunchSettingsWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateLaunchSettingsWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Shared\WoTemplateMainLayoutCssWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateMainLayoutCssWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Shared\WoTemplateMainLayoutWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateMainLayoutWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Shared\WoTemplateNavMenuCssWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateNavMenuCssWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\Shared\WoTemplateNavMenuWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateNavMenuWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\UserCode\WoTemplateScriptsUserPartialWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateScriptsUserPartialWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\UserCode\WoTemplateScriptsUserWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateScriptsUserWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WoTemplateAppRazorWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateAppRazorWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WoTemplateCsprojWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateCsprojWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WoTemplateGenericWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateGenericWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WoTemplateImportsWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateImportsWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WoTemplateProgramWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateProgramWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WwwRoot\CSS\WoTemplateStyleComponentsWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateStyleComponentsWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generator\BlazorWasm\TemplatesWasm\WwwRoot\WoTemplateIndexHtmlWasm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoTemplateIndexHtmlWasm.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\fmModelTranslate.cs" />
+    <Compile Update="Forms\fmModelMaker.cs" />
+    <Compile Update="Forms\fmNumberedExceptions.cs" />
+    <Compile Update="Forms\fmLabels.cs" />
+    <Compile Update="Forms\fmModelLayOut.cs" />
+    <Compile Update="Forms\fmModel.cs" />
+    <Compile Update="Forms\fmModelPrePost.cs" />
+    <Compile Update="Forms\fmModelStateDiagram.cs" />
+    <Compile Update="Forms\fmTestCasesOld.cs" />
+    <Compile Update="Forms\fmCompareVersion.cs" />
+    <Compile Update="Forms\fmProyectProperties.cs" />
+    <Compile Update="Forms\fmEstiloLibre.cs" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Themes\WoThemeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BaiqiSoft.WinFormsHtmlEditor.NET4" Version="24.2.17" />
+    <PackageReference Include="DevExpress.Win" Version="24.1.3" />
+    <PackageReference Include="DevExpress.Win.Design" Version="24.1.3" />
+    <PackageReference Include="Flurl" Version="3.0.6" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.6.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2045.28" />
+    <PackageReference Include="NPOI" Version="2.7.1" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+    <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="8.1.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.3\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.3\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CSharpier.MsBuild" Version="0.27.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
+    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
+    <PackageReference Include="WooW.CFDI" Version="3.3.0" />
+    <PackageReference Include="WooW.Socket" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Forms\fmModelDTO.cs" />
+    <Compile Remove="Forms\fmModelDTO.Designer.cs" />
+    <Compile Remove="Forms\fmModelosLogica.cs" />
+    <Compile Remove="Forms\fmModelosLogica.Designer.cs" />
+    <Compile Remove="Forms\fmScript.cs" />
+    <Compile Remove="Forms\fmScript.Designer.cs" />
+    <Compile Remove="Generator\BlazorServer\GeneradorServer.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\Index\PlantillaIndexPartialServer1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\Index\PlantillaIndexRazorServer.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaControlModels1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaConvertDataTables1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaCsprojectServer.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaCssSite.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaHostServer.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaImports.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaInstanceData1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaLayoutServer.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaMainLayout.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaObjectsServer1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaObservers1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaProgramServer1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaUserCredentials1.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaWasmHost.cs" />
+    <Compile Remove="Generator\BlazorServer\PlantillaServer\PlantillaWasmLayout.cs" />
+    <Compile Remove="Generator\BlazorServer\Reporte\PlantillaIndexReporte1.cs" />
+    <Compile Remove="Generator\BlazorServer\Reporte\ReportBase.cs" />
+    <Compile Remove="Generator\BlazorServer\Reporte\ReportBase.Designer.cs" />
+    <EmbeddedResource Remove="Forms\fmModelDTO.resx" />
+    <EmbeddedResource Remove="Forms\fmModelosLogica.resx" />
+    <EmbeddedResource Remove="Forms\fmScript.resx" />
+    <EmbeddedResource Remove="Generator\BlazorServer\Reporte\ReportBase.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WooW.SB.Config\WooW.SB.Config.csproj" />
+    <ProjectReference Include="..\WooW.SB.UI\WooW.SB.UI.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Auth\WoTemplateAWoComponentBaseBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateAWoComponentBaseBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Auth\WoTemplateWoAuthenticationStateProviderBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoAuthenticationStateProviderBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\ControlModels\WoTemplateLoginControlsBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLoginControlsBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\ControlModels\WoTemplateModelControlsBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateModelControlsBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\FluentValidators\WoTemplateInstanciaUdnAsignarValidatorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateInstanciaUdnAsignarValidatorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateIndexPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateIndexPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateIndexRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateIndexRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateLayoutPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLayoutPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateLayoutRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLayoutRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateWoUrnRedirectionPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoUrnRedirectionPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Pages\WoTemplateWoUrnRedirectionRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoUrnRedirectionRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutCssBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateMainLayoutCssBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateMainLayoutPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateMainLayoutRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoHeaderLayoutRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoHeaderLayoutRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoHeaderSubItemsRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoHeaderSubItemsRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoLoginLayoutPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoLoginLayoutPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoLoginLayoutRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoLoginLayoutRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Slaves\WoTemplateSlavePartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateSlavePartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Themes\WoTemplateWoThemeSwitcherPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoThemeSwitcherPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\Themes\WoTemplateWoThemeSwitcherRazorBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoThemeSwitcherRazorBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateLoginScriptsUserBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLoginScriptsUserBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateScriptsUserBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateScriptsUserBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateScriptsUserPartialBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateScriptsUserPartialBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WoTemplateImportsBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateImportsBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Css\WoTemplateSiteBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateSiteBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Css\WoTemplateStyleComponentsBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateStyleComponentsBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Js\WoTemplateWoScriptsBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoScriptsBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\CommonTemplates\WwwRoot\Js\WoTemplateWoThemeSwitcherBlazor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoThemeSwitcherBlazor.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\ServerTemplates\Pages\WoTemplateLayoutServer.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLayoutServer.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\ServerTemplates\Properties\WoTemplateLaunchSettingsServer.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLaunchSettingsServer.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\ServerTemplates\Shared\WoTemplateWoHeaderLayoutPartialServer.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoHeaderLayoutPartialServer.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\ServerTemplates\WoTemplateCsProjectServer.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateCsProjectServer.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\ServerTemplates\WoTemplateProgramServer.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateProgramServer.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\WasmTemplates\Properties\WoTemplateLaunchSettingsWasm.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLaunchSettingsWasm.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\WasmTemplates\Shared\WoTemplateWoHeaderLayoutPartialWasm.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateWoHeaderLayoutPartialWasm.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\WasmTemplates\WoTemplateCsProjectWasm.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateCsProjectWasm.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\WasmTemplates\WoTemplateProgramWasm.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateProgramWasm.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorGenerator\BlazorTemplates\WasmTemplates\WwwRoot\WoTemplateIndexHtmlWasm.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateIndexHtmlWasm.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorTestGenerator\BuildTest\BaseForm\WoTemplateBaseTestJs.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateBaseTestJs.cs</LastGenOutput>
+    </None>
+    <None Update="BlazorTestGenerator\BuildTest\LaunchTestVisualCode\WoTemplateLaunchVisualCode.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WoTemplateLaunchVisualCode.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

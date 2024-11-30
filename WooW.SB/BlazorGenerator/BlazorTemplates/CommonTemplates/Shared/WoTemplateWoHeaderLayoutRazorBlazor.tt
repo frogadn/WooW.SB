@@ -1,0 +1,165 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name = "System.Xml.dll" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".razor" #>
+
+@*///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateMainLayoutRazorBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------*@
+
+@using WooW.Blazor.Services
+@using Microsoft.Extensions.Localization
+
+@inherits AWoComponentBase
+
+@inject NavigationManager Navigation
+
+@inject ILocalStorageService LocalStorage
+
+@inject IStringLocalizer<App> Localizer
+
+<WoHeader TApp="App">
+
+    @* Icono/Titulo de la aplicacion *@
+    <TitleFragment>
+        <img src="/assets/images/Logo_transparent.png" class="w-100 h-100 object-fit-fill" />
+    </TitleFragment>
+
+    @* Componente visible en la barra del header *@
+    <Sessionfragment>
+        <AuthorizeView>
+            <Authorized>
+                @if (AuthResult != null && SessionData != null)
+                {
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center" id="mniAccount">
+                        <i class="bi bi-person-circle"></i>
+                        &ensp;
+                        @SessionData.UserName.ToString()
+                    </div>
+                }
+            </Authorized>
+            <NotAuthorized>
+                <div class="tm-8 text-center" id="mniAccount">
+                    <i class="bi bi-person-circle" />
+                    &ensp;
+                    Log In
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
+    </Sessionfragment>
+
+    @* Panel que se despliega al hacer click al componente en la parte superior *@
+    <SessionSubmenu>
+        <AuthorizeView>
+            <Authorized>
+
+                <div class="w-100 user-profile">
+                    <div class="flex-column align-items-center justify-content-center">
+                        <div class="logo-container d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-person-fill fs-3" />
+                            @if (SessionData != null)
+                            {
+                                <div class="tm-8 text-center">@SessionData.UserName.ToString()</div>
+                            }
+                        </div>
+                        <div class="user-name-container px-2 mb-3">
+                            @if (SessionData != null)
+                            {
+                                <div class="d-flex justify-content-between">
+                                    <i class="bi bi-buildings-fill" />
+                                    <label>@SessionData.Udn</label>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <i class="bi bi-database-fill-check" />
+                                    <label>@SessionData.Instance</label>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <i class="bi bi-clock" />
+                                    <label>@SessionData.Year</label>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <i class="bi bi-database-fill-gear" />
+                                    <label>@SessionData.InstanceType</label>
+                                </div>
+                            }
+                        </div>
+                        <hr class="mx-1" />
+                        <div class="d-flex justify-content-evenly pb-2">
+                            <DxButton Id="btnLogOut" IconCssClass="bi bi-person-fill-slash" Click="@LogOut_Click" RenderStyle="@ButtonRenderStyle.Secondary" />
+                        </div>
+                    </div>
+                </div>
+
+            </Authorized>
+
+            <NotAuthorized>
+                <div class="w-100 d-flex justify-content-center">
+                    <label class="p-0 mx-auto my-2">No Auth</label>
+                </div>
+            </NotAuthorized>
+
+        </AuthorizeView>
+    </SessionSubmenu>
+
+    <ItemsFragment> 
+        
+        <WoSimpleToolbarItem Id="mniRoles"
+                             TApp="App"
+                             Alignment="@eToolbarItemAlignment.Right"
+                             Text=" "
+                             Tooltip="Rol"
+                             Icon="@eBoostrapIcons.personvcardfill"
+                             DropDownVisible="@false"
+                             OnClickEvc="@RoleDropDownClick"
+                             CssClass="rounded-pill">
+            <ItemsFragment>
+
+                <WoHeaderSubItems Items="@_roles"
+                                  SelectedItem="@_selectedRol"
+                                  SelectedItemChanged="@SelectRol" />
+
+            </ItemsFragment>
+        </WoSimpleToolbarItem>
+
+        <WoSimpleToolbarItem Id="mniMenus"
+                             TApp="App"
+                             Alignment="@eToolbarItemAlignment.Right"
+                             Text=" "
+                             Tooltip="Menu"
+                             Icon="@eBoostrapIcons.menubuttonfill"
+                             CssClass="rounded-pill">
+            <ItemsFragment>
+
+                <WoHeaderSubItems Items="@_menus"
+                                  SelectedItem="@_selectedMenu"
+                                  SelectedItemChanged="@SelectMenu" />
+
+            </ItemsFragment>
+        </WoSimpleToolbarItem>
+
+        <WoSimpleToolbarItem Id="mniLangs"
+                             TApp="App"
+                             Alignment="@eToolbarItemAlignment.Right"
+                             Text=" "
+                             Tooltip="Idioma"
+                             Icon="@eBoostrapIcons.globeamericas"
+                             CssClass="rounded-pill">
+            <ItemsFragment>
+
+                <WoHeaderSubItems Items="@_cultures"
+                                  SelectedItem="@_selectedCulture"
+                                  SelectedItemChanged="@ChangeCulture" />
+
+            </ItemsFragment>
+        </WoSimpleToolbarItem>
+        
+        <WoThemeSwitcher TApp="App" />
+    </ItemsFragment>
+
+</WoHeader>
+
+<WoSimpleMenu RawMenusCol="@_rawMenusCol" TApp="App" />

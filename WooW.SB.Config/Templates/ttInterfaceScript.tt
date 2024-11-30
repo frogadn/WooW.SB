@@ -1,0 +1,45 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
+using System.IO;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.Text;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.DTO;
+using WooW.Model;
+using WooW.Interface;
+using Newtonsoft.Json;
+using ServiceStack.Web; 
+
+namespace WooW.Model
+{
+
+    public class <#=request.Id#>Script : IWoInterface
+    {
+        //
+        // Parámetro INT<#=request.Id#> interface a insertar o actualizar
+        //
+        // No modifique las estructura de la llamada del método
+        // Pude agregar a la clase propiedades, métodos o funciones
+        //
+        // Generado por ttInterfaceScript
+        //
+        public void Check<MOD>(WoTargetConnection woTarget, MOD Modelo) 
+        {
+            <#=request.Id#> o<#=request.Id#> = (Modelo as <#=request.Id#>);
+
+
+        }
+    }
+}
+<#+
+public Modelo request { get; set; }  
+#>

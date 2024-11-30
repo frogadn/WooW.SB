@@ -1,0 +1,193 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\ControlModels\WoTemplateLoginControlsBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using WooW.Blazor;
+
+namespace <#=Project#>.ControlModels
+{
+    public class WoLoginControls
+    {
+        #region Inyección de dependencias
+
+        /// <summary>
+        /// Constructor de la clase con ls instancias que se inyectaran desde el
+        /// despachador de dependencias de blazor
+        /// </summary>
+        public WoLoginControls() { }
+
+        #endregion Inyección de dependencias
+
+
+        /// Layouts y contenedores
+
+        #region Root
+
+        /// <summary>
+        /// Instancia de la vista del formulario Root.
+        /// </summary>
+        public WoFormView Root { get; set; } = new WoFormView();
+
+        #endregion Root
+
+        #region formModelForm
+
+        /// <summary>
+        /// Instancia de la vista del input de texto formModelForm.
+        /// </summary>
+        public WoFormGroupView formModelForm { get; set; } = new WoFormGroupView();
+
+        #endregion formModelForm
+
+
+        /// Alertas
+
+        #region Alertas
+
+        /// <summary>
+        /// Instancia de la vista de las alertas.
+        /// </summary>
+        public WoFormAlertView Alertas = new WoFormAlertView();
+
+        #endregion Alertas
+
+
+        #region Usuario
+
+        /// <summary>
+        /// Instancia de la vista del input de texto Usuario.
+        /// </summary>
+        public WoEditView User { get; set; } = new WoEditView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView UserContainer { get; set; } = new WoFormItemView();
+
+        /// <summary>
+        /// Instancia de las alertas del input.
+        /// </summary>
+        public WoInputAlertView UserAlert { get; set; } = new WoInputAlertView();
+
+        #endregion Usuario
+
+        #region Password
+
+        /// <summary>
+        /// Instancia de la vista del input de texto Password.
+        /// </summary>
+        public WoEditView Password { get; set; } = new WoEditView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView PasswordContainer { get; set; } = new WoFormItemView();
+
+        /// <summary>
+        /// Instancia de las alertas del input.
+        /// </summary>
+        public WoInputAlertView PasswordAlert { get; set; } = new WoInputAlertView();
+
+        #endregion Password
+
+
+        #region Instance
+
+        /// <summary>
+        /// Instancia de la vista del input de texto Instance.
+        /// </summary>
+        public WoEditView Instance { get; set; } = new WoEditView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView InstanceContainer { get; set; } = new WoFormItemView();
+
+        /// <summary>
+        /// Instancia de las alertas del input.
+        /// </summary>
+        public WoInputAlertView InstanceAlert { get; set; } = new WoInputAlertView();
+
+        #endregion Instance
+
+        #region UDN
+
+        /// <summary>
+        /// Instancia de la vista del input de texto UDN.
+        /// </summary>
+        public WoEditView Udn { get; set; } = new WoEditView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView UdnContainer { get; set; } = new WoFormItemView();
+
+        /// <summary>
+        /// Instancia de las alertas del input.
+        /// </summary>
+        public WoInputAlertView UdnAlert { get; set; } = new WoInputAlertView();
+
+        #endregion UDN
+
+        #region Year
+
+        /// <summary>
+        /// Instancia de la vista del input de texto UDN.
+        /// </summary>
+        public WoEditView Year { get; set; } = new WoEditView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView YearContainer { get; set; } = new WoFormItemView();
+
+        /// <summary>
+        /// Instancia de las alertas del input.
+        /// </summary>
+        public WoInputAlertView YearAlert { get; set; } = new WoInputAlertView();
+
+        #endregion Year
+
+        #region InstanceType
+
+        /// <summary>
+        /// Instancia de la vista del input de texto UDN.
+        /// </summary>
+        public WoEditView InstanceType { get; set; } = new WoEditView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView InstanceTypeContainer { get; set; } = new WoFormItemView();
+
+        /// <summary>
+        /// Instancia de las alertas del input.
+        /// </summary>
+        public WoInputAlertView InstanceTypeAlert { get; set; } = new WoInputAlertView();
+
+        #endregion InstanceType
+
+        #region LoginButton
+
+        /// <summary>
+        /// Instancia de la vista del botón de logeo
+        /// </summary>
+        public WoButtonView LoginButton { get; set; } = new WoButtonView();
+
+        /// <summary>
+        /// Instancia de la vista del container de input.
+        /// </summary>
+        public WoFormItemView LoginContainer { get; set; } = new WoFormItemView();
+
+        #endregion LoginButton
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+#>

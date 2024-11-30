@@ -1,0 +1,768 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Shared\WoTemplateWoLoginLayoutPartialBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using <#=Project#>.ControlModels;
+using <#=Project#>.FluentValidators;
+using <#=Project#>.UserCode;
+
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+using WooW.Core;
+using WooW.Model;
+using WooW.Blazor;
+
+namespace <#=Project#>.Shared
+{
+    public partial class WoLoginLayout
+    {
+        #region Dependencias
+
+        /// <summary>
+        /// Instancia con los métodos de los eventos de los controles.
+        /// </summary>
+        [Inject]
+        private LoginScriptsUser _scriptsUser { get; set; }
+
+        /// <summary>
+        /// Inyección de la clase con las vistas para manipular los controles.
+        /// </summary>
+        [Inject]
+        public WoLoginControls _modelControls { get; set; }
+
+        #endregion Dependencias
+
+
+        #region Métodos adicionales
+
+        /// <summary>
+        /// Método que permite actualizar el formulario.
+        /// Solo realiza un re dibujado de la vista.
+        /// </summary>
+        private void UpdateEntireForm() => StateHasChanged();
+
+        /// <summary>
+        /// Verifica que el formulario se haya iniciado y
+        /// si es el caso, ejecuta el método de inicio.
+        /// </summary>
+        private void CheckForm()
+        {
+            _scriptsUser.FormularioIniciado();
+        }
+
+        #endregion Métodos adicionales
+
+
+        #region Fluent Autenticación
+
+        /// <summary>
+        /// Instancia de la clase con las reglas de fluent, permite la validación del objeto.
+        /// <summary>
+        private AutenticateValidator _authValidator = new AutenticateValidator();
+
+        /// <summary>
+        /// Guarda el resultado de la validación, los errores que contenga se asignaran a las alertas del componente.
+        /// <summary>
+        private ValidationResult? _authValidationResult;
+
+        /// <summary>
+        /// Se llama en cada uno de los métodos OnChange del modelo para validar el cambio del campo con fluent
+        /// </summary>
+        private void AuthValidate(string id, dynamic control)
+        {
+            _authValidationResult = _authValidator.Validate(_scriptsUser.Authenticate);
+            bool noAlerts = true;
+
+            foreach (var validation in _authValidationResult.Errors)
+            {
+                if (id == validation.PropertyName)
+                {
+                    noAlerts = false;
+                    control.AgregarAlerta(validation.ToString());
+                }
+            }
+
+            if (noAlerts)
+            {
+                control.LimpiarAlertas();
+            }
+
+        }
+
+        #endregion Fluent Autenticación
+
+        #region Fluent SetUdn
+
+        /// <summary>
+        /// Instancia de la clase con las reglas de fluent, permite la validación del objeto.
+        /// <summary>
+        private InstanciaUdnAsignarValidator _instanceValidator = new InstanciaUdnAsignarValidator();
+
+        /// <summary>
+        /// Guarda el resultado de la validación, los errores que contenga se asignaran a las alertas del componente.
+        /// <summary>
+        private ValidationResult? _instanceValidationResult;
+
+        /// <summary>
+        /// Se llama en cada uno de los métodos OnChange del modelo para validar el cambio del campo con fluent
+        /// </summary>
+        private void InstanceValidate(string id, dynamic control)
+        {
+            _instanceValidationResult = _instanceValidator.Validate(_scriptsUser.InstanciaUdnAsignar);
+            bool noAlerts = true;
+
+            foreach (var validation in _instanceValidationResult.Errors)
+            {
+                if (id == validation.PropertyName)
+                {
+                    noAlerts = false;
+                    control.AgregarAlerta(validation.ToString());
+                }
+            }
+
+            if (noAlerts)
+            {
+                control.LimpiarAlertas();
+            }
+
+        }
+
+        #endregion Fluent SetUdn
+
+
+        #region Root
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoForm? _wfRoot;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusWfRoot()
+        {
+            if (_wfRoot != null)
+            {
+                _modelControls.Root.ChangeFontWeightEvt += _wfRoot.ChangeFontWeight;
+                _modelControls.Root.ChangeFontItalicEvt += _wfRoot.ChangeFontItalic;
+                _modelControls.Root.ChangeFontDecorationEvt += _wfRoot.ChangeFontDecoration;
+                _modelControls.Root.ChangeFontColorEvt += _wfRoot.ChangeFontColor;
+                _modelControls.Root.ChangeBackColorEvt += _wfRoot.ChangeBackgroundColor;
+
+                _modelControls.Root.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        #endregion Root
+
+        #region formModelForm
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoFormGroup? _wfgformModelForm;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusWfgformModelForm()
+        {
+            if (_wfgformModelForm != null)
+            {
+                _modelControls.formModelForm.ChangeFontWeightEvt += _wfgformModelForm.ChangeFontWeight;
+                _modelControls.formModelForm.ChangeFontItalicEvt += _wfgformModelForm.ChangeFontItalic;
+                _modelControls.formModelForm.ChangeFontDecorationEvt += _wfgformModelForm.ChangeFontDecoration;
+                _modelControls.formModelForm.ChangeFontColorEvt += _wfgformModelForm.ChangeFontColor;
+                _modelControls.formModelForm.ChangeBackColorEvt += _wfgformModelForm.ChangeBackgroundColor;
+                _modelControls.formModelForm.ChangeIconEvt += _wfgformModelForm.ChangeIcon;
+
+                _modelControls.formModelForm.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        #endregion formModelForm
+
+
+        #region Alerts
+
+        /// <summary>
+        /// Referencia que representa el componente de alertas.
+        /// </summary>
+        private WoFormAlert? _alerts;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusAlerts()
+        {
+            if (_alerts != null)
+            {
+                _modelControls.Alertas.AddAlertEvt += _alerts.AddAlert;
+                _modelControls.Alertas.RemoveAlertEvt += _alerts.RemoveAlert;
+                _modelControls.Alertas.CleanAlertsEvt += _alerts.CleanAll;
+            }
+        }
+
+        #endregion Alerts
+
+
+        #region User
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoTextEdit<App>? _txtUser;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusTxtUser()
+        {
+            if (_txtUser != null)
+            {
+                _modelControls.User.ChangeEnabledEvt += _txtUser.ChangeStatus;
+                _modelControls.User.ChangeSizeEvt += _txtUser.ChangeFontSize;
+
+                _modelControls.User.ChangeControlFontColorEvt += _txtUser.ChangeControlFontColor;
+                _modelControls.User.ChangeControlFontWeightEvt += _txtUser.ChangeControlFontWeight;
+                _modelControls.User.ChangeControlFontItalicEvt += _txtUser.ChangeControlFontItalic;
+                _modelControls.User.ChangeControlFontDecorationEvt += _txtUser.ChangeControlFontDecoration;
+
+                _modelControls.User.ChangeBackColorEvt += _txtUser.ChangeBackgroundColor;
+
+                _modelControls.User.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliUser;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista del componente a los 
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        /// <param name="status"></param>
+        public void SetStatusFliUser()
+        {
+            if (_fliUser != null)
+            {
+                _modelControls.UserContainer.ChangeCaptionFontColorEvt += _fliUser.ChangeCaptionFontColor;
+                _modelControls.UserContainer.ChangeCaptionFontWeightEvt += _fliUser.ChangeCaptionFontWeight;
+                _modelControls.UserContainer.ChangeCaptionFontItalicEvt += _fliUser.ChangeCaptionFontItalic;
+                _modelControls.UserContainer.ChangeCaptionFontDecorationEvt += _fliUser.ChangeCaptionFontDecoration;
+                _modelControls.UserContainer.ChangeSizeEvt += _fliUser.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Referencia de la alerta del input.
+        /// </summary>
+        private WoInputAlert? _wiaUser;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista a los eventos del componenrte a través de la referencia..
+        /// </summary>
+        public void SetStatusWiaUser()
+        {
+            if (_wiaUser != null)
+            {
+                _modelControls.UserAlert.SetAlertValueEvt += _wiaUser.SetAlertValue;
+                _modelControls.UserAlert.ClearAlertsEvt += _wiaUser.ClearAlerts;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente Id.
+        /// </summary>
+        public void User_OnChange(String? newValue)
+        {
+            _scriptsUser.Authenticate.UserName = newValue;
+            AuthValidate("UserName", _modelControls.UserAlert);
+            _scriptsUser.User_OnChange();
+        }
+
+        #endregion User
+
+        #region Password
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoTextEdit<App>? _txtPassword;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusTxtPassword()
+        {
+            if (_txtPassword != null)
+            {
+                _modelControls.Password.ChangeEnabledEvt += _txtPassword.ChangeStatus;
+                _modelControls.Password.ChangeSizeEvt += _txtPassword.ChangeFontSize;
+
+                _modelControls.Password.ChangeControlFontColorEvt += _txtPassword.ChangeControlFontColor;
+                _modelControls.Password.ChangeControlFontWeightEvt += _txtPassword.ChangeControlFontWeight;
+                _modelControls.Password.ChangeControlFontItalicEvt += _txtPassword.ChangeControlFontItalic;
+                _modelControls.Password.ChangeControlFontDecorationEvt += _txtPassword.ChangeControlFontDecoration;
+
+                _modelControls.Password.ChangeBackColorEvt += _txtPassword.ChangeBackgroundColor;
+
+                _modelControls.Password.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliPassword;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista del componente a los 
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        /// <param name="status"></param>
+        public void SetStatusFliPassword()
+        {
+            if (_fliPassword != null)
+            {
+                _modelControls.UserContainer.ChangeCaptionFontColorEvt += _fliPassword.ChangeCaptionFontColor;
+                _modelControls.UserContainer.ChangeCaptionFontWeightEvt += _fliPassword.ChangeCaptionFontWeight;
+                _modelControls.UserContainer.ChangeCaptionFontItalicEvt += _fliPassword.ChangeCaptionFontItalic;
+                _modelControls.UserContainer.ChangeCaptionFontDecorationEvt += _fliPassword.ChangeCaptionFontDecoration;
+                _modelControls.UserContainer.ChangeSizeEvt += _fliPassword.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Referencia de la alerta del input.
+        /// </summary>
+        private WoInputAlert? _wiaPassword;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista a los eventos del componenrte a través de la referencia..
+        /// </summary>
+        public void SetStatusWiaPassword()
+        {
+            if (_wiaPassword != null)
+            {
+                _modelControls.PasswordAlert.SetAlertValueEvt += _wiaPassword.SetAlertValue;
+                _modelControls.PasswordAlert.ClearAlertsEvt += _wiaPassword.ClearAlerts;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente Id.
+        /// </summary>
+        public void Password_OnChange(String? newValue)
+        {
+            _scriptsUser.Authenticate.Password = newValue;
+            AuthValidate("Password", _modelControls.PasswordAlert);
+            _scriptsUser.Password_OnChange();
+        }
+
+        #endregion Password
+
+
+        #region Instance
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoTextEdit<App>? _txtInstance;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusTxtInstance()
+        {
+            if (_txtInstance != null)
+            {
+                _modelControls.Instance.ChangeEnabledEvt += _txtInstance.ChangeStatus;
+                _modelControls.Instance.ChangeSizeEvt += _txtInstance.ChangeFontSize;
+
+                _modelControls.Instance.ChangeControlFontColorEvt += _txtInstance.ChangeControlFontColor;
+                _modelControls.Instance.ChangeControlFontWeightEvt += _txtInstance.ChangeControlFontWeight;
+                _modelControls.Instance.ChangeControlFontItalicEvt += _txtInstance.ChangeControlFontItalic;
+                _modelControls.Instance.ChangeControlFontDecorationEvt += _txtInstance.ChangeControlFontDecoration;
+
+                _modelControls.Instance.ChangeBackColorEvt += _txtInstance.ChangeBackgroundColor;
+
+                _modelControls.Instance.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliInstance;
+
+        public void SetStatusFliInstance()
+        {
+            if (_fliInstance != null)
+            {
+                _modelControls.InstanceContainer.ChangeCaptionFontColorEvt += _fliInstance.ChangeCaptionFontColor;
+                _modelControls.InstanceContainer.ChangeCaptionFontWeightEvt += _fliInstance.ChangeCaptionFontWeight;
+                _modelControls.InstanceContainer.ChangeCaptionFontItalicEvt += _fliInstance.ChangeCaptionFontItalic;
+                _modelControls.InstanceContainer.ChangeCaptionFontDecorationEvt += _fliInstance.ChangeCaptionFontDecoration;
+                _modelControls.InstanceContainer.ChangeSizeEvt += _fliInstance.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Referencia de la alerta del input.
+        /// </summary>
+        private WoInputAlert? _wiaInstance;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista a los eventos del componenrte a través de la referencia..
+        /// </summary>
+        public void SetStatusWiaInstance()
+        {
+            if (_wiaInstance != null)
+            {
+                _modelControls.InstanceAlert.SetAlertValueEvt += _wiaInstance.SetAlertValue;
+                _modelControls.InstanceAlert.ClearAlertsEvt += _wiaInstance.ClearAlerts;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente Id.
+        /// </summary>
+        public void Instance_OnChange(String? newValue)
+        {
+            _scriptsUser.InstanciaUdnAsignar.Instance = newValue;
+            InstanceValidate("Instance", _modelControls.InstanceAlert);
+            _scriptsUser.Instance_OnChange();
+        }
+
+        #endregion Instance
+
+        #region Udn
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoTextEdit<App>? _txtUdn;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusTxtUdn()
+        {
+            if (_txtUdn != null)
+            {
+                _modelControls.Udn.ChangeEnabledEvt += _txtUdn.ChangeStatus;
+                _modelControls.Udn.ChangeSizeEvt += _txtUdn.ChangeFontSize;
+
+                _modelControls.Udn.ChangeControlFontColorEvt += _txtUdn.ChangeControlFontColor;
+                _modelControls.Udn.ChangeControlFontWeightEvt += _txtUdn.ChangeControlFontWeight;
+                _modelControls.Udn.ChangeControlFontItalicEvt += _txtUdn.ChangeControlFontItalic;
+                _modelControls.Udn.ChangeControlFontDecorationEvt += _txtUdn.ChangeControlFontDecoration;
+
+                _modelControls.Udn.ChangeBackColorEvt += _txtUdn.ChangeBackgroundColor;
+
+                _modelControls.Udn.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliUdn;
+
+        public void SetStatusFliUdn()
+        {
+            if (_fliUdn != null)
+            {
+                _modelControls.UdnContainer.ChangeCaptionFontColorEvt += _fliUdn.ChangeCaptionFontColor;
+                _modelControls.UdnContainer.ChangeCaptionFontWeightEvt += _fliUdn.ChangeCaptionFontWeight;
+                _modelControls.UdnContainer.ChangeCaptionFontItalicEvt += _fliUdn.ChangeCaptionFontItalic;
+                _modelControls.UdnContainer.ChangeCaptionFontDecorationEvt += _fliUdn.ChangeCaptionFontDecoration;
+                _modelControls.UdnContainer.ChangeSizeEvt += _fliUdn.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Referencia de la alerta del input.
+        /// </summary>
+        private WoInputAlert? _wiaUdn;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista a los eventos del componenrte a través de la referencia..
+        /// </summary>
+        public void SetStatusWiaUdn()
+        {
+            if (_wiaUdn != null)
+            {
+                _modelControls.UdnAlert.SetAlertValueEvt += _wiaUdn.SetAlertValue;
+                _modelControls.UdnAlert.ClearAlertsEvt += _wiaUdn.ClearAlerts;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente Id.
+        /// </summary>
+        public void Udn_OnChange(String? newValue)
+        {
+            _scriptsUser.InstanciaUdnAsignar.Udn = newValue;
+            InstanceValidate("Udn", _modelControls.UdnAlert);
+            _scriptsUser.Udn_OnChange();
+        }
+
+        #endregion Udn
+
+
+        #region Year
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoComboEdit<int, App>? _cmbYear;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusCmbYear()
+        {
+            if (_cmbYear != null)
+            {
+                _modelControls.Year.ChangeEnabledEvt += _cmbYear.ChangeStatus;
+                _modelControls.Year.ChangeSizeEvt += _cmbYear.ChangeFontSize;
+                               
+                _modelControls.Year.ChangeControlFontColorEvt += _cmbYear.ChangeControlFontColor;
+                _modelControls.Year.ChangeControlFontWeightEvt += _cmbYear.ChangeControlFontWeight;
+                _modelControls.Year.ChangeControlFontItalicEvt += _cmbYear.ChangeControlFontItalic;
+                _modelControls.Year.ChangeControlFontDecorationEvt += _cmbYear.ChangeControlFontDecoration;
+                               
+                _modelControls.Year.ChangeBackColorEvt += _cmbYear.ChangeBackgroundColor;
+
+                _modelControls.Year.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliYear;
+
+        public void SetStatusFliYear()
+        {
+            if (_fliYear != null)
+            {
+                _modelControls.YearContainer.ChangeCaptionFontColorEvt += _fliYear.ChangeCaptionFontColor;
+                _modelControls.YearContainer.ChangeCaptionFontWeightEvt += _fliYear.ChangeCaptionFontWeight;
+                _modelControls.YearContainer.ChangeCaptionFontItalicEvt += _fliYear.ChangeCaptionFontItalic;
+                _modelControls.YearContainer.ChangeCaptionFontDecorationEvt += _fliYear.ChangeCaptionFontDecoration;
+                _modelControls.YearContainer.ChangeSizeEvt += _fliYear.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Referencia de la alerta del input.
+        /// </summary>
+        private WoInputAlert? _wiaYear;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista a los eventos del componenrte a través de la referencia..
+        /// </summary>
+        public void SetStatusWiaYear()
+        {
+            if (_wiaYear != null)
+            {
+                _modelControls.YearAlert.SetAlertValueEvt += _wiaYear.SetAlertValue;
+                _modelControls.YearAlert.ClearAlertsEvt += _wiaYear.ClearAlerts;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente Id.
+        /// </summary>
+        public void Year_OnChange(int newValue)
+        {
+            _scriptsUser.InstanciaUdnAsignar.Year = newValue;
+            InstanceValidate("Year", _modelControls.YearAlert);
+            _scriptsUser.Year_OnChange();
+        }
+
+        #endregion Year
+
+        #region InstanceType
+
+        /// <summary>
+        /// Referencia que representa el componente.
+        /// </summary>
+        private WoComboEdit<tWoIntanciaType, App>? _cmbInstanceType;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusTxtInstanceType()
+        {
+            if (_cmbInstanceType != null)
+            {
+                _modelControls.InstanceType.ChangeEnabledEvt += _cmbInstanceType.ChangeStatus;
+                _modelControls.InstanceType.ChangeSizeEvt += _cmbInstanceType.ChangeFontSize;
+
+                _modelControls.InstanceType.ChangeControlFontColorEvt += _cmbInstanceType.ChangeControlFontColor;
+                _modelControls.InstanceType.ChangeControlFontWeightEvt += _cmbInstanceType.ChangeControlFontWeight;
+                _modelControls.InstanceType.ChangeControlFontItalicEvt += _cmbInstanceType.ChangeControlFontItalic;
+                _modelControls.InstanceType.ChangeControlFontDecorationEvt += _cmbInstanceType.ChangeControlFontDecoration;
+
+                _modelControls.InstanceType.ChangeBackColorEvt += _cmbInstanceType.ChangeBackgroundColor;
+
+                _modelControls.InstanceType.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliInstanceType;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista del componente a los 
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        /// <param name="status"></param>
+        public void SetStatusFliInstanceType()
+        {
+            if (_fliInstanceType != null)
+            {
+                _modelControls.InstanceTypeContainer.ChangeCaptionFontColorEvt += _fliInstanceType.ChangeCaptionFontColor;
+                _modelControls.InstanceTypeContainer.ChangeCaptionFontWeightEvt += _fliInstanceType.ChangeCaptionFontWeight;
+                _modelControls.InstanceTypeContainer.ChangeCaptionFontItalicEvt += _fliInstanceType.ChangeCaptionFontItalic;
+                _modelControls.InstanceTypeContainer.ChangeCaptionFontDecorationEvt += _fliInstanceType.ChangeCaptionFontDecoration;
+                _modelControls.InstanceTypeContainer.ChangeSizeEvt += _fliInstanceType.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Referencia de la alerta del input.
+        /// </summary>
+        private WoInputAlert? _wiaInstanceType;
+
+        /// <summary>
+        /// Suscrive los controladores de eventos de la vista a los eventos del componenrte a través de la referencia..
+        /// </summary>
+        public void SetStatusWiaInstanceType()
+        {
+            if (_wiaInstanceType != null)
+            {
+                _modelControls.InstanceTypeAlert.SetAlertValueEvt += _wiaInstanceType.SetAlertValue;
+                _modelControls.InstanceTypeAlert.ClearAlertsEvt += _wiaInstanceType.ClearAlerts;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente InstanceType.
+        /// </summary>
+        public void InstanceType_OnChange(tWoIntanciaType newValue)
+        {
+            _scriptsUser.InstanciaUdnAsignar.InstanceType = newValue;
+            InstanceValidate("InstanceType", _modelControls.InstanceTypeAlert);
+            _scriptsUser.InstanceType_OnChange();
+        }
+
+        #endregion InstanceType
+
+         #region btnLogin
+
+        private WoButton? _btnLogin;
+
+        /// <summary>
+        /// Suscribe los controladores de eventos de la vista del componente a los
+        /// eventos del componente a través de la referencia.
+        /// </summary>
+        public void SetStatusBtnLogin()
+        {
+            if (_cmbYear != null)
+            {
+                _modelControls.LoginButton.ChangeEnabledEvt += _btnLogin.ChangeEnable;
+                _modelControls.LoginButton.ChangeSizeEvt += _btnLogin.ChangeFontSize;
+                _modelControls.LoginButton.ChangeFontColorEvt += _btnLogin.ChangeFontColor;
+                _modelControls.LoginButton.ChangeFontWeightEvt += _btnLogin.ChangeFontWeight;
+                _modelControls.LoginButton.ChangeFontItalicEvt += _btnLogin.ChangeFontItalic;
+                _modelControls.LoginButton.ChangeFontDecorationEvt += _btnLogin.ChangeFontDecoration;
+                _modelControls.LoginButton.ChangeButtonTypeEvt += _btnLogin.ChangeButtonType;
+
+                _modelControls.LoginButton.ActualizarComponente();
+                CheckForm();
+            }
+        }
+
+        /// <summary>
+        /// Referencia del contenedor del item
+        /// </summary>
+        private WoFormItem? _fliLogin;
+
+        public void SetStatusFliLogin()
+        {
+            if (_fliLogin != null)
+            {
+                _modelControls.LoginContainer.ChangeCaptionFontColorEvt += _fliLogin.ChangeCaptionFontColor;
+                _modelControls.LoginContainer.ChangeCaptionFontWeightEvt += _fliLogin.ChangeCaptionFontWeight;
+                _modelControls.LoginContainer.ChangeCaptionFontItalicEvt += _fliLogin.ChangeCaptionFontItalic;
+                _modelControls.LoginContainer.ChangeCaptionFontDecorationEvt += _fliLogin.ChangeCaptionFontDecoration;
+                _modelControls.LoginContainer.ChangeSizeEvt += _fliLogin.ChangeFontSize;
+            }
+        }
+
+        /// <summary>
+        /// Evento del componente que se ejecuta cuando se modifica el valor del componente Id.
+        /// </summary>
+        public async Task Login_OnClick(MouseEventArgs e)
+        {
+            try
+            {
+                _scriptsUser.Authenticate.provider = "credentials";
+                _scriptsUser.Authenticate.RememberMe = true;
+
+                await Provider.Login(
+                    auth: _scriptsUser.Authenticate,
+                    udnInstance: _scriptsUser.InstanciaUdnAsignar
+                );
+            }
+            catch (Exception ex)
+            {
+                _scriptsUser.WoLoginControls.Alertas.AgregarAlerta(mensaje: ex.Message);
+            }
+        }
+
+        #endregion btnLogin         
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+#>

@@ -1,0 +1,69 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".js" #>
+
+///--------------------------------------------------------------
+///Modelos: __NombreDelModelo_
+///Prueba: <#=TestName#>
+///Para asegurar el correcto funcionamiento del test evite modificar la estructura del código encerrado marcado como IMPORTANTE
+///--------------------------------------------------------------
+
+///IMPORTANTE----------------------------------------------------
+
+///Referencia de los otros ficheros js con clases y funciones para el funcionamiento de la prueba
+import { Uth } from '../../TestCafe/wotestcafe/Tools/Helpers/Uth.js';
+
+///Referencias de los modelos:
+
+///--------------------------------------------------------------
+
+///IMPORTANTE----------------------------------------------------
+///Creación del contexto para la ejecución de la prueba.
+
+///Configuración de la url de inicio de la prueba
+fixture `<#=TestName#>`.page`<#=Url#>`;
+
+///Configuración del contexto de la prueba, dentro de una arrow function
+test('<#=TestName#>', async t =>
+{
+    ///Try que encapsula el test
+    try
+    {
+        ///Instancia del modelo con utilidades para el test
+        var _uth = new Uth('__NombreDelModelo_', '<#=TestName#>');
+
+        ///Instancias de los modelos
+
+///--------------------------------------------------------------
+
+///IMPORTANTE----------------------------------------------------
+
+        ///Autenticación a través del login.
+        await _uth.Login();
+
+///--------------------------------------------------------------
+
+
+        ///Ingrese su código aquí
+
+
+///IMPORTANTE----------------------------------------------------
+///Cierre de la prueba
+
+    }
+    catch (ex)
+    {
+        ///Envió al log, información del error ocurrido
+        await _uth.logErr(ex.message);
+
+        ///Envió a la consola información del error
+        console.log(ex.message);
+    }
+});
+
+///--------------------------------------------------------------
+ 
+
+<#+
+public string TestName { get; set; } = "";
+public string Url { get; set; } = "";
+#>

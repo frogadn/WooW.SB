@@ -1,0 +1,270 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\UserCode\WoTemplateLoginScriptsUserBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using <#=Project#>.ControlModels;
+using ServiceStack;
+using WooW.Blazor.Resources;
+using WooW.Core;
+
+namespace <#=Project#>.UserCode
+{
+    public partial class LoginScriptsUser
+    {
+        #region Inyección de dependencias
+
+        /// <summary>
+        /// Constructor de la clase con ls instancias que se inyectaran desde el
+        /// despachador de dependencias de blazor
+        /// </summary>
+        /// <param name="WoLoginControls"></param>
+        public LoginScriptsUser(WoLoginControls WoLoginControls)
+        {
+            this.WoLoginControls = WoLoginControls;
+        }
+
+        #endregion Inyección de dependencias
+
+        #region Instancia de los modelos
+
+        /// <summary>
+        /// DTO que contiene los datos de autenticación.
+        /// Que se enviaran al servidor.
+        /// </summary>
+        public Authenticate Authenticate { get; set; } = new Authenticate();
+
+        /// <summary>
+        /// DTO que contiene los datos de la instancia.
+        /// Se envía con los datos de la instancia y udn para asignarlos a la sesión.
+        /// </summary>
+        public WoInstanciaUdnAsignar InstanciaUdnAsignar { get; set; } = new WoInstanciaUdnAsignar();
+
+        #endregion Instancia de los modelos
+
+        #region Instancia de los controles
+
+        /// <summary>
+        /// Instancia de los controles de la vista.
+        /// </summary>
+        public WoLoginControls WoLoginControls { get; set; }
+
+        #endregion Instancia de los controles
+
+
+        #region Formulario
+
+        /// <summary>
+        /// Método de inicio que se detona al iniciar el formulario.
+        /// </summary>
+        public async Task FormularioIniciado()
+        {
+            //Authenticate.UserName = "admin@email.com";
+            //Authenticate.Password = "mypass";
+
+            Authenticate.UserName = "employee@email.com";
+            Authenticate.Password = "p";
+
+            InstanciaUdnAsignar.Instance = "FRO941024IHA";
+            InstanciaUdnAsignar.Udn = "INDU";
+            InstanciaUdnAsignar.Year = DateTime.Now.Year;
+            InstanciaUdnAsignar.InstanceType = tWoIntanciaType.DEV;
+
+            WoLoginControls.LoginButton.TipoDeBoton(eButtonColor.Success);
+            WoLoginControls.formModelForm.ColorDeFondo(eGroupColor.Info);
+            WoLoginControls.formModelForm.ColorDeLetra(eTextColor.White);
+            WoLoginControls.formModelForm.DecoracionDeLetra(eTextDecoration.Underline);
+        }
+
+        #endregion Formulario
+
+
+        #region Usuario
+
+        /// <summary>
+        /// Evento on change del input de texto Usuario.
+        /// </summary>
+        public async void User_OnChange()
+        {
+            //Code here
+        }
+
+        /// <summary>
+        /// Evento on focus del input de texto Usuario.
+        /// </summary>
+        public async void User_OnFocus()
+        {
+            
+        }
+
+        /// <summary>
+        /// Evento on blur del input de texto Usuario.
+        /// </summary>
+        public async void User_OnBlur()
+        {
+            
+        }
+
+        #endregion Usuario
+
+        #region Password
+
+        /// <summary>
+        /// Evento on change del input de texto Password.
+        /// </summary>
+        public async void Password_OnChange()
+        {
+            //Code here
+        }
+
+        /// <summary>
+        /// Evento on focus del input de texto Password.
+        /// </summary>
+        public async void Password_OnFocus()
+        {
+            
+        }
+
+        /// <summary>
+        /// Evento on blur del input de texto Password.
+        /// </summary>
+        public async void Password_OnBlur()
+        {
+            
+        }
+
+        #endregion Password
+
+
+        #region Instance
+
+        /// <summary>
+        /// Evento on change del input de texto Instance.
+        /// </summary>
+        public async void Instance_OnChange()
+        {
+            //Code here
+        }
+
+        /// <summary>
+        /// Evento on focus del input de texto Instance.
+        /// </summary>
+        public async void Instance_OnFocus()
+        {
+            
+        }
+
+        /// <summary>
+        /// Evento on blur del input de texto Instance.
+        /// </summary>
+        public async void Instance_OnBlur()
+        {
+            
+        }
+
+        #endregion Instance
+
+        #region UDN
+
+        /// <summary>
+        /// Evento on change del input de texto UDN.
+        /// </summary>
+        public async void Udn_OnChange()
+        {
+            //Code here
+        }
+
+        /// <summary>
+        /// Evento on focus del input de texto UDN.
+        /// </summary>
+        public async void Udn_OnFocus()
+        {
+            
+        }
+
+        /// <summary>
+        /// Evento on blur del input de texto UDN.
+        /// </summary>
+        public async void Udn_OnBlur()
+        {
+            
+        }
+
+        #endregion UDN
+        
+        #region Year
+
+        public List<int> Years { get; set; } = new List<int>()
+        {
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+        };
+
+        /// <summary>
+        /// Evento on change del input de texto UDN.
+        /// </summary>
+        public async void Year_OnChange()
+        {
+            //Code here
+        }
+
+        /// <summary>
+        /// Evento on focus del input de texto UDN.
+        /// </summary>
+        public async void Year_OnFocus()
+        {
+            
+        }
+
+        /// <summary>
+        /// Evento on blur del input de texto UDN.
+        /// </summary>
+        public async void Year_OnBlur()
+        {
+            
+        }
+
+        #endregion Year
+
+        #region InstanceType
+
+        /// <summary>
+        /// Evento on change del input de texto UDN.
+        /// </summary>
+        public async void InstanceType_OnChange()
+        {
+            //Code here
+        }
+
+        /// <summary>
+        /// Evento on focus del input de texto UDN.
+        /// </summary>
+        public async void InstanceType_OnFocus()
+        {
+            
+        }
+
+        /// <summary>
+        /// Evento on blur del input de texto UDN.
+        /// </summary>
+        public async void InstanceType_OnBlur()
+        {
+            
+        }
+
+        #endregion InstanceType
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+#>

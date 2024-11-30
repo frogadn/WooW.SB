@@ -1,0 +1,45 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".razor" #>
+
+@*///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\WoTemplateAppBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------*@
+
+<CascadingAuthenticationState>
+    <div class="w-100 vh-100">
+
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                @*Autorizacion de las paginas en el navegador*@
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+
+                    @*Formulario que se renderizara en caso de que no se encuentre el usuario autenticado*@
+                    <NotAuthorized>
+                        <WoLoginLayout />
+                    </NotAuthorized>
+
+                    @*Componente que se renderiza mientras en usuario se autentica*@
+                    <Authorizing>
+                        <p>Autorizando...</p>
+                    </Authorizing>
+
+                </AuthorizeRouteView>
+
+                <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            </Found>
+
+            @*Mensaje de error que se pone en pantalla cuando ocurre un error no controlado*@
+            <NotFound>
+                <PageTitle>Not found</PageTitle>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <p role="alert">Sorry, there's nothing at this address.</p>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </div>
+
+
+</CascadingAuthenticationState>

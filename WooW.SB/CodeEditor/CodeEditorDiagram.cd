@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WooW.SB.CodeEditor.WoSyntaxEditor" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>ECIAQAAuDCQAAQAAYKeSgQkHMYgCQAAQYBBAQAKAhFA=</HashCode>
+      <FileName>CodeEditor\WoSyntaxEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerBase.AWoSyntaxManagerAttributeBase">
+    <Position X="11.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQIAAAAAAACgACAAAQAABAACAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerBase\AWoSyntaxManagerAttributeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerBase.AWoSyntaxManagerBase">
+    <Position X="5.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAACACAAAAAAAAQAAAAAAAAAAAAAAAiAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerBase\AWoSyntaxManagerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerBase.AWoSyntaxManagerClassBase">
+    <Position X="8.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAABAAAAAAAAAAAAAAABAAAgAAAAAAABAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerBase\AWoSyntaxManagerClassBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerBase.AWoSyntaxManagerConstructorBase">
+    <Position X="8.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAECAAABAACAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerBase\AWoSyntaxManagerConstructorBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerBase.AWoSyntaxManagerMethodBase">
+    <Position X="15.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAACEAQgAAAAAAAADAAAAQACAAADAAAEABAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerBase\AWoSyntaxManagerMethodBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerClass.WoSyntaxManagerCompilation">
+    <Position X="5" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerClass\WoSyntaxManagerCompilation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerClass.WoSyntaxManagerFluentValidation">
+    <Position X="8.25" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerClass\WoSyntaxManagerFluentValidation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerClass.WoSyntaxManagerModelClass">
+    <Position X="12" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAgAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerClass\WoSyntaxManagerModelClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerClass.WoSyntaxManagerUserCode">
+    <Position X="15" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerClass\WoSyntaxManagerUserCode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerClass.WoSyntaxManagerUserCodePartial">
+    <Position X="18" Y="6" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerClass\WoSyntaxManagerUserCodePartial.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxEditor.SyntaxEditorSettings.WoSyntaxEditorCompilerContext">
+    <Position X="5" Y="8.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAIAgAAAAAAAAAIAAAAQAAAAAAAQ=</HashCode>
+      <FileName>CodeEditor\SyntaxEditor\SyntaxEditorSettings\WoSyntaxEditorCompilerContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxEditor.SyntaxEditorSettings.WoSyntaxEditorContext">
+    <Position X="8.25" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAMAAAAAAEQAAAAAACAQAAAQAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxEditor\SyntaxEditorSettings\WoSyntaxEditorContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxEditor.SyntaxEditorSettings.WoSyntaxEditorHeaderContext">
+    <Position X="11.25" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxEditor\SyntaxEditorSettings\WoSyntaxEditorHeaderContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.SyntaxEditor.SyntaxEditorSettings.WoSyntaxEditorOptions">
+    <Position X="0.5" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxEditor\SyntaxEditorSettings\WoSyntaxEditorOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WooW.SB.CodeEditor.CodeComponents.WoBaseEditor">
+    <Position X="0.5" Y="5.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAADIAAACAgAAAAAQCAAQCCA4AAABAAAABAAASIAAg=</HashCode>
+      <FileName>CodeEditor\CodeComponents\WoBaseEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WooW.SB.CodeEditor.SyntaxManager.SyntaxManagerBase.IWoSyntaxManager">
+    <Position X="0.5" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxManager\SyntaxManagerBase\IWoSyntaxManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="WooW.SB.CodeEditor.SyntaxEditor.SyntaxEditorSettings.eCodeType">
+    <Position X="0.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAgAAAAAAAAAAAAAQAAAAEAAAA=</HashCode>
+      <FileName>CodeEditor\SyntaxEditor\SyntaxEditorSettings\WoSyntaxEditorOptions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

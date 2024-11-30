@@ -1,0 +1,292 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+///------------------------------------------------------------------------------------------------------------------
+/// Código autogenerado por la template WoTemplateGenericClass en el path WooW.SB\WooW.SB\BlazorGenerator\BlazorTemplates\CommonTemplates\Auth\WoTemplateWoAuthenticationStateProviderBlazor.tt
+/// Genera código consistente con la version de la prueba de concepto a dia 05-10-2023 En Blazor Wasm y Server
+/// Este código es auto generado y su modificación puede causar que el código no se comporte como deveria ademas de
+/// que se perderan los cambios realizados en el código al momento de la generación.
+///------------------------------------------------------------------------------------------------------------------
+
+using Microsoft.AspNetCore.Components;
+using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
+using ServiceStack;
+using System.Net.Http.Headers;
+using System.Security.Claims;
+using WooW.Core;
+
+namespace <#=Project#>.Auth
+{
+    public class WoAuthenticationStateProvider : AuthenticationStateProvider, IHasJsonApiClient
+    {
+       #region Atributos de la clase
+
+        /// <summary>
+        /// Resultado del API al intentar el login.
+        /// </summary>
+        private AuthenticateResponse? _authResult;
+
+        /// <summary>
+        /// Resultado del API al intentar enviar la UDN.
+        /// </summary>
+        private WoInstanciaUdnResponse? _udnResult;
+
+        /// <summary>
+        /// Informacion de la seson solo para mostrar.
+        /// </summary>
+        private SessionData _sessionData { get; set; } = new SessionData();
+
+        #endregion Atributos de la clase
+
+        #region Instancias inyectadas
+
+        /// <summary>
+        /// Cliente de Service stack despachado desde el contenedor de dependencias de blazor.
+        /// </summary>
+        public JsonApiClient? Client { get; set; }
+
+        /// <summary>
+        /// Instancia de la interface de local storage.
+        /// </summary>
+        public ILocalStorageService LocalStorage;
+
+        #endregion Instancias inyectadas
+
+        #region Constructor de la clase
+
+        /// <summary>
+        /// Constructor de la clase.
+        /// Inyecta instancias desde el despachador de blazor (Program).
+        /// </summary>
+        /// <param name="client"></param>
+        public WoAuthenticationStateProvider(JsonApiClient client, ILocalStorageService localStorage)
+        {
+            this.Client = client;
+            this.LocalStorage = localStorage;
+        }
+
+        #endregion Constructor de la clase
+
+        #region Implementación del proveedor de autenticación
+
+        /// <summary>
+        /// Método implementado de el proveedor de autenticación.
+        /// </summary>
+        /// <returns></returns>
+        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
+        {
+            ClaimsIdentity? identity = new ClaimsIdentity();
+
+            try
+            {
+                if (_authResult is null)
+                {
+                    _authResult = await LocalStorage.GetItemAsync<AuthenticateResponse>("A");
+                    _udnResult = await LocalStorage.GetItemAsync<WoInstanciaUdnResponse>("U");
+                }
+                if (_authResult is null)
+                {
+                    return new AuthenticationState(new ClaimsPrincipal(identity));
+                }
+
+                List<Claim> claims = new List<Claim>();
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, _authResult.SessionId));
+                claims.Add(new Claim(ClaimTypes.Name, _authResult.UserName));
+                claims.Add(new Claim(ClaimTypes.Email, _authResult.UserName));
+
+                foreach (var role in _authResult.Roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
+                foreach (var permission in _authResult.Permissions)
+                {
+                    claims.Add(new Claim("perm", permission, ClaimValueTypes.String, null));
+                }
+
+                identity = new ClaimsIdentity(claims, "Server authentication");
+            }
+            catch (Exception ex)
+            {
+                //throw new Exception($@"Ocurrió un error al comprobar la autenticación: {ex.Message}");
+            }
+
+            var claimsPrincipal = new ClaimsPrincipal(identity);
+            var state = new AuthenticationState(claimsPrincipal);
+
+            NotifyAuthenticationStateChanged(Task.FromResult(state));
+
+            return state;
+        }
+
+        #endregion Implementación del proveedor de autenticación
+
+        #region Login
+
+        /// <summary>
+        /// Realiza el login en el API de ServiceStack.
+        /// Utiliza el cliente de ServiceStack para realizar la petición.
+        /// asigna la UDN al usuario autenticado a través del método SetUdnAsync.
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="udnInstance"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public async Task Login(Authenticate auth, WoInstanciaUdnAsignar udnInstance)
+        {
+            try
+            {
+                if (Client != null)
+                {
+                    /// Envía las credenciales del usuario.
+                    _authResult = await Client.PostAsync(auth);
+
+                    if (_authResult.ResponseStatus.IsSuccess())
+                    {
+                        Client.BearerToken = _authResult.BearerToken;
+                        Client.GetHttpClient().DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authResult.BearerToken);
+                        await SetUdnAsync(udnInstance);
+                    }
+                    else
+                    {
+                        throw new Exception($@"No se autentico correctamente y no se puede asignar la UDN");
+                    }
+                }
+                else
+                {
+                    throw new Exception($@"El cliente es nulo");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($@"Ocurrió un error al realizar el login: {ex.Message}");
+            }
+        }
+
+        #endregion Login
+
+        #region Asignación de UDN
+
+        /// <summary>
+        /// Asigna la UDN al usuario autenticado.
+        /// Guarda en el local storage el resultado de la autenticación y de la asignación de la UDN.
+        /// </summary>
+        /// <param name="udnInstance"></param>
+        /// <param name="loginTest"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public async Task SetUdnAsync(WoInstanciaUdnAsignar udnInstance, bool loginTest = false)
+        {
+            try
+            {
+                if (_authResult != null)
+                {
+                    if (Client != null)
+                    {
+                        if (_authResult.ResponseStatus.IsSuccess())
+                        {
+                            if(udnInstance.Year == -1)
+                                udnInstance.Year = DateTime.Now.Year;
+
+                            /// Envía los datos de la instancia.
+                            dynamic result = await Client.PostAsync(udnInstance);
+
+                            _sessionData.UserName = _authResult.DisplayName;
+                            _sessionData.Mail = _authResult.UserName;
+                            _sessionData.Instance = udnInstance.Instance;
+                            _sessionData.Udn = udnInstance.Udn;
+                            _sessionData.Year = udnInstance.Year.ToString();
+                            _sessionData.InstanceType = udnInstance.InstanceType.ToString();
+
+                            _udnResult = result;
+
+                            if (_udnResult.Result != null)
+                            {
+                                await LocalStorage.SetItemAsync("S", _sessionData);
+                                await LocalStorage.SetItemAsync("A", _authResult);
+                                await LocalStorage.SetItemAsync("U", _udnResult);
+
+                                if (!loginTest)
+                                    NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
+                            }
+                            else
+                            {
+                                await LocalStorage.RemoveItemAsync("A");
+                                await LocalStorage.RemoveItemAsync("U");
+
+                                throw new Exception($@"No se asigno la UDN correctamente");
+                            }
+                        }
+                        else
+                        {
+                            await LocalStorage.RemoveItemAsync("A");
+                            await LocalStorage.RemoveItemAsync("U");
+
+                            throw new Exception($@"No se puede asignar la UDN si no se a autenticado primero");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception($@"El cliente es nulo");
+                    }
+                }
+                else
+                {
+                    await LocalStorage.RemoveItemAsync("A");
+                    await LocalStorage.RemoveItemAsync("U");
+
+                    throw new Exception($@"El authResult es nulo");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($@"Ocurrió un error al intentar asignar la UDN: {ex.Message}");
+            }
+        }
+
+        #endregion Asignación de UDN
+
+        #region Logout
+
+        /// <summary>
+        /// Elimina los datos de autenticación del local storage.
+        /// y notifica a los componentes que se ha cerrado la sesión.
+        /// </summary>
+        /// <returns></returns>
+        public async Task Logout()
+        {
+            try
+            {
+                await LocalStorage.RemoveItemAsync("A");
+                await LocalStorage.RemoveItemAsync("U");
+
+                await LocalStorage.ClearAsync();
+
+                _authResult = null;
+                _udnResult = null;
+
+                if (Client != null)
+                {
+                    Client.UserName = null;
+                    Client.SessionId = null;
+                    Client.BearerToken = null;
+                }
+
+                NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($@"Ocurrió un error al intentar asignar la UDN: {ex.Message}");
+            }
+        }
+
+        #endregion Logout
+    }
+}
+
+<#+
+public string Project { get; set; } = "";
+#>

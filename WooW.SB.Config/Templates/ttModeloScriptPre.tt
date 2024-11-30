@@ -1,0 +1,140 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="WooW.Core" #>
+using System;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using ServiceStack;
+using ServiceStack.OrmLite;
+using WooW.Core.Server;
+using WooW.Core;
+using WooW.Core.Common;
+using WooW.DTO;
+
+namespace WooW.Model
+{
+    //  
+    // Parametro dto<#=modelo.Id#>(+ transición) DTO modelo como base para insertar o actualizar
+    // Parametro cur<#=modelo.Id#> modelo que actualmente esta registrado
+    //
+    // No modifique las estructura de la llamada del metodo
+    // Pude agregar a la clase propiedades, metodos o funciones
+    //
+    // Generado por ttModeloScriptPre
+    //
+
+    public class <#=modelo.Id#>PreConditions<#=extension#> 
+    {
+        public <#=modelo.Id#>PreConditions<#=extension#>(WoTargetConnection woTarget)
+        {
+
+        }
+<#      if ((modelo.TipoModelo == WoTypeModel.TransactionContable) ||
+            (modelo.TipoModelo == WoTypeModel.TransactionNoContable) ||
+            (modelo.TipoModelo == WoTypeModel.CatalogType) ||
+            (modelo.TipoModelo == WoTypeModel.Catalog) ||
+            (modelo.TipoModelo == WoTypeModel.Parameter))
+        {#> 
+        #region Validar
+		private void Validar<MOD>(WoTargetConnection woTarget, MOD o<#=modelo.Id#>)
+			where MOD : <#=modelo.Id#>
+		{
+
+		}
+        #endregion Validar
+<#      if ((modelo.TipoModelo == WoTypeModel.TransactionContable) 
+           || (modelo.TipoModelo == WoTypeModel.TransactionNoContable))
+        {#> 
+        #region ValidarAfectar
+		private void ValidarAfectar<MOD>(WoTargetConnection woTarget, MOD o<#=modelo.Id#>)
+			where MOD : <#=modelo.Id#>
+		{
+
+        }
+        #endregion ValidarAfectar
+<#      }#> 
+<#      }
+   foreach(Transicion tra in modelo.Diagrama.Transiciones.Where( e => e.EstadoInicial == 0 ) )
+    {#> 
+        // Método para el modelo <#=modelo.Id#> de pre condición para la transición <#=tra.Id#> de <#=tra.EstadoInicial#> a <#=tra.EstadoFinal#>
+        #region <#=modelo.Id#><#=tra.Id#>
+        public void <#=modelo.Id#><#=tra.Id#><DTO, MOD>(WoTargetConnection woTarget, DTO dto<#=modelo.Id#><#=tra.Id#>, MOD empty<#=modelo.Id#>)
+            where DTO : <#=modelo.Id#><#=tra.Id#>
+            where MOD : <#=modelo.Id#>, new()
+        {
+<#      if ((modelo.TipoModelo == WoTypeModel.TransactionContable) ||
+            (modelo.TipoModelo == WoTypeModel.TransactionNoContable) ||
+            (modelo.TipoModelo == WoTypeModel.CatalogType) ||
+            (modelo.TipoModelo == WoTypeModel.Catalog) ||
+            (modelo.TipoModelo == WoTypeModel.Parameter))
+        {#>
+			WoModelToModel.Copy(ref empty<#=modelo.Id#>, dto<#=modelo.Id#><#=tra.Id#>);
+			Validar(woTarget, empty<#=modelo.Id#>);
+<#          if(((modelo.TipoModelo == WoTypeModel.TransactionContable) || (modelo.TipoModelo == WoTypeModel.TransactionNoContable)) && (tra.EstadoFinal == 200))
+            { #>
+			ValidarAfectar(woTarget, empty<#=modelo.Id#>);
+<#          }#>
+            WoModelToModel.Copy(ref dto<#=modelo.Id#><#=tra.Id#>, empty<#=modelo.Id#>);
+<#      }#>
+        }
+        #endregion <#=modelo.Id#><#=tra.Id#>
+<#  }#>
+<#  foreach(Transicion tra in modelo.Diagrama.Transiciones.Where( e => e.EstadoInicial != 0 ).OrderBy( e => e.EstadoInicial ) )
+    {#> 
+        // Método para el modelo <#=modelo.Id#> de pre condición para la transición <#=tra.Id#> de <#=tra.EstadoInicial#> a <#=tra.EstadoFinal#>
+        #region <#=modelo.Id#><#=tra.Id#>
+        public void <#=modelo.Id#><#=tra.Id#><DTO, MOD>(WoTargetConnection woTarget, DTO dto<#=modelo.Id#><#=tra.Id#>, MOD cur<#=modelo.Id#>, woModifyVerb verb)
+            where DTO : <#=modelo.Id#><#=tra.Id#>
+            where MOD : <#=modelo.Id#>, new()
+        {
+<#      if ((modelo.TipoModelo == WoTypeModel.TransactionContable) ||
+            (modelo.TipoModelo == WoTypeModel.TransactionNoContable) ||
+            (modelo.TipoModelo == WoTypeModel.CatalogType) ||
+            (modelo.TipoModelo == WoTypeModel.Catalog) ||
+            (modelo.TipoModelo == WoTypeModel.Parameter))
+        {   
+            if((((modelo.TipoModelo == WoTypeModel.TransactionContable) || (modelo.TipoModelo == WoTypeModel.TransactionNoContable)) && (tra.EstadoFinal <= 200)) ||
+               (((modelo.TipoModelo != WoTypeModel.TransactionContable) || (modelo.TipoModelo == WoTypeModel.TransactionNoContable)) && (tra.EstadoFinal <= 100) && (tra.EstadoInicial != 500)))
+            { 
+                if(!(((modelo.TipoModelo == WoTypeModel.TransactionContable) || (modelo.TipoModelo == WoTypeModel.TransactionNoContable)) && (tra.EstadoFinal == 200) && (tra.EstadoInicial == 300))) 
+                { #>
+			MOD empty<#=modelo.Id#> = new MOD();
+			WoModelToModel.Copy(ref empty<#=modelo.Id#>, cur<#=modelo.Id#>);
+			WoModelToModel.Copy(ref empty<#=modelo.Id#>, dto<#=modelo.Id#><#=tra.Id#>);
+			Validar(woTarget, empty<#=modelo.Id#>);
+<#                  if((modelo.TipoModelo == WoTypeModel.TransactionContable) && (tra.EstadoFinal == 200))
+                    { #>
+			ValidarAfectar(woTarget, empty<#=modelo.Id#>);
+<#                  }#>
+            WoModelToModel.Copy(ref dto<#=modelo.Id#><#=tra.Id#>, empty<#=modelo.Id#> );
+<#             }
+            }
+        }#>
+        }
+        #endregion <#=modelo.Id#><#=tra.Id#>
+<#  }#>
+<#      if ((modelo.TipoModelo == WoTypeModel.CatalogType) ||
+            (modelo.TipoModelo == WoTypeModel.Catalog) ||
+            (modelo.TipoModelo == WoTypeModel.Control) ||
+            (modelo.TipoModelo == WoTypeModel.DataMart))
+        {#>
+
+		#region <#=modelo.Id#>Borrar
+		public void <#=modelo.Id#>Borrar<DTO, MOD>(WoTargetConnection woTarget, DTO dto<#=modelo.Id#>Borrar, MOD cur<#=modelo.Id#>)
+			where DTO : <#=modelo.Id#>Borrar
+			where MOD : <#=modelo.Id#>, new()
+		{
+
+		}
+		#endregion <#=modelo.Id#>Borrar
+<#  }#>
+    }
+}
+<#+
+public Modelo modelo { get; set; }  
+public string extension { get; set; }
+#>
